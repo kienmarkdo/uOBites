@@ -3,7 +3,7 @@ A fictional food ordering web application that allows users to place an online o
 
 
 
-# Developer instructions
+## Developer instructions
 You need to start the backend (Flask server) and the frontend (React-TypeScript).
 
 Clone and navigate to the root of the repo. Instructions below are in bash terminal (e.g. git bash terminal).
@@ -11,7 +11,8 @@ Clone and navigate to the root of the repo. Instructions below are in bash termi
 ### Start Flask server
 - Open terminal in root of repo
 - cd backend # navigate to the backend folder
-- source venv/Scripts/activate # activates the Flask server
+- source venv/Scripts/activate # activates the Flask environment
+    - deactivate # deactivates Flask environment; servers will no longer be able to start
 - pip install flask # installs Flask if you don't already have it
 - python FILENAME.py # starts your server on localhost:5000
 

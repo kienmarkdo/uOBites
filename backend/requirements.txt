@@ -1,0 +1,5 @@
+autopep8==2.0.0
+pycodestyle==2.10.0
+pynput==1.7.6
+six==1.16.0
+tomli==2.0.1

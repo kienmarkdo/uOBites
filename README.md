@@ -11,7 +11,12 @@ Clone and navigate to the root of the repo. Instructions below are in bash termi
 ### Start Flask server
 - Open terminal in root of repo
 - cd backend # navigate to the backend folder
-- source venv/Scripts/activate # activates the Flask environment
+- Install virtual environment (first time only)
+    - python -m venv venv
+    - pip install flask
+    - pip install -r requirements.txt
+- Start Flask environment
+    - source venv/Scripts/activate # activates the Flask environment
     - deactivate # deactivates Flask environment; servers will no longer be able to start
 - pip install flask # installs Flask if you don't already have it
 - python FILENAME.py # starts your server on localhost:5000

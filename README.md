@@ -28,7 +28,15 @@ Clone and navigate to the root of the repo. Instructions below are in bash termi
     - `npm install # installs dependencies; this will take a minute`
 - `npm run start # starts the frontend on localhost:3000`
 
-### Start Cypress autoamted testing
+### Start Cypress automated testing
 - Open terminal in root of repo
 - `cd frontend # navigate to the frontend folder`
 - `npx cypress open # opens the Cypress testing GUI`
+
+### Set up PostgreSQL database
+- Install PostgreSQL https://www.postgresql.org/download/ (follow a YouTube tutorial yourself if needed)
+- Open terminal in root of repo
+- `pip install psycopg2`
+- Create and populate the database with basic information
+    - `python create_db.py`
+        - You can open PgAdmin to verify that the data has been created properly

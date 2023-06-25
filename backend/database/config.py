@@ -4,4 +4,4 @@
 # However, take great precaution as this is a sensitive file that contains your Postgres password
 
 # Double-check that this file is ignored by .gitignore before committing/pushing your password
-postgres_password = ""
+postgres_password = "ENTER_POSTGRES_PASSWORD_HERE"

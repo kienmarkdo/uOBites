@@ -1,11 +1,12 @@
 import psycopg2
+import config
 
 ####################
 # Global variables #
 ####################
-path_to_create_schema_file = "database/create_db.sql"
+path_to_create_schema_file = "create_db.sql"
 uobites_db_name = "uobites_db"
-db_password = ""  # DO NOT COMMIT AND PUSH YOUR PASSWORD
+db_password = config.postgres_password  # Add Postgres password in config.py
 sql_commands = [
     """
     """,

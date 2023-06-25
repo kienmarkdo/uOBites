@@ -1,6 +1,11 @@
 import psycopg2
 import config
 
+'''
+Purpose: This file is meant for all things database-related, including the "Create Database" suite of scripts
+that is executed to create the database schema, populate it with starting information, etc.
+'''
+
 ####################
 # Global variables #
 ####################

@@ -30,10 +30,15 @@ const LandingPage = () => {
   return (
     <div className="App">
       <div className='landing-header'>
-        <h1 style={{fontSize: "45px"}}>UOBITES</h1>
-        <button className='login-btn'>
-          Login
-        </button>
+        <h1 style={{ fontSize: "45px" }}>UOBITES</h1>
+        <div className='button-container'>
+          <button className='landing-page-btn'>
+            Login
+          </button>
+          <button className='landing-page-btn'>
+            Register
+          </button>
+        </div>
       </div>
       <div className='landing-body'>
         <h2>

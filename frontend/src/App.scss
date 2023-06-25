@@ -23,15 +23,17 @@
   padding-bottom: 50px;
 }
 
-.login-btn {
+.landing-page-btn {
   color: #F5F5DC;
   font-size: 20px;
   background-color: #800000;
   border-radius: 10px;
-  padding: 10px
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
-.login-btn:hover {
+.landing-page-btn:hover {
   cursor: pointer;
   background-color: #970000;
 }
@@ -55,4 +57,9 @@
 .store-icon-img:hover {
   cursor: pointer;
   transform: scale(1.2);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
 }

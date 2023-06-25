@@ -38,7 +38,11 @@ Clone and navigate to the root of the repo. Instructions below are in bash termi
 - Open terminal in root of repo
 - `pip install psycopg2`
 - Navigate to `backend/database`
-- Write your Postgres password in the `config.py` file
+- Create a file called `config.py` and add the variable `postgres_password = ""` with your Postgres password as the value of the variable
+    - **TLDR Just write the code on line 7 like in the screenshot below.**
+  
+    ![image](https://github.com/kienmarkdo/uOBites/assets/67518620/77e91325-4b53-4879-8af0-8ae3df940717)
+
 - Run Python script to create the database schema and populate it with basic information
     - `python create_db.py  # this script takes care of all of the database schema creation and population when you clone the repo`
         - You can open PgAdmin to verify that the data has been created properly

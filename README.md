@@ -40,3 +40,9 @@ Clone and navigate to the root of the repo. Instructions below are in bash termi
 - Create and populate the database with basic information
     - `python create_db.py`
         - You can open PgAdmin to verify that the data has been created properly
+- Troubleshoot
+    - If you see this error
+![image](https://github.com/kienmarkdo/uOBites/assets/67518620/d10a2886-eed2-425c-8514-d59945fc2b21)
+    - Go to Services. Find PostgreSQL. Right click and click Start.
+ ![image](https://github.com/kienmarkdo/uOBites/assets/67518620/d5a461f6-6fd2-44b0-b078-9fbabc9994eb)
+

@@ -12,14 +12,14 @@ Clone and navigate to the root of the repo. Instructions below are in bash termi
 - Open terminal in root of repo
 - `cd backend`  # navigate to the backend folder
 - Install virtual environment (first time only)
-    - `python -m venv venv`
-    - `pip install flask`
+    - `python -m venv venv # note that python may not work, try python3` 
+    - `pip install flask # same as above with pip, try pip3`
     - `pip install -r requirements.txt`
 - Start Flask environment
-    - `source venv/Scripts/activate  # activates the Flask environment`
+    - `source venv/Scripts/activate # activates the Flask environment` OR `source venv/bin/activate`
     - `deactivate  # deactivates Flask environment; servers will no longer be able to start`
 - `pip install flask  # installs Flask if you don't already have it`
-- `python FILENAME.py  # starts your server on localhost:5000`
+- `python FILENAME.py  # make sure you go to localhost:5000/<ENDPOINT_NAME> (you can find endpoints in the @app.route("<ENDPOINT_NAME>") inside server.py`
 
 ### Start React frontend
 - Open terminal in root of repo

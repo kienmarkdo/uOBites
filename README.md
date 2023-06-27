@@ -44,7 +44,7 @@ Clone and navigate to the root of the repo. Instructions below are in bash termi
     ![image](https://github.com/kienmarkdo/uOBites/assets/67518620/77e91325-4b53-4879-8af0-8ae3df940717)
 
 - Run Python script to create the database schema and populate it with basic information
-    - `python create_db.py  # this script takes care of all of the database schema creation and population when you clone the repo`
+    - `python db.py  # this script takes care of all of the database schema creation and population when you clone the repo`
         - You can open PgAdmin to verify that the data has been created properly
 - Troubleshoot
     - If you see this error

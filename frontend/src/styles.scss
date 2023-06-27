@@ -1,12 +1,14 @@
-.App {
-  text-align: center;
-  height: 100vh;
+.container {
+  // height: 100vh;
+  color: white;
 }
 
 .landing-header {
   height: 30%;
   padding-top:10px;
   padding-bottom: 10px;
+  color: white;
+  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -20,10 +22,12 @@
 
 .landing-body {
   height: 70%;
-  padding-bottom: 50px;
+  padding: 10px;
+  color: white;
+  text-align: center;
 }
 
-.landing-page-btn {
+.uottawa-btn {
   color: #F5F5DC;
   font-size: 20px;
   background-color: #800000;
@@ -33,7 +37,7 @@
   margin-right: 5px;
 }
 
-.landing-page-btn:hover {
+.uottawa-btn:hover {
   cursor: pointer;
   background-color: #970000;
 }
@@ -47,11 +51,17 @@
   justify-content: center;
 }
 
+.store-icon-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 .store-icon-img {
   height: 100px;
   margin-left: 35px;
   margin-right: 35px;
   transition: transform 0.3s;
+  margin-bottom: 5px;
 }
 
 .store-icon-img:hover {

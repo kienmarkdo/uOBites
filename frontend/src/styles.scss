@@ -28,18 +28,19 @@
 }
 
 .uottawa-btn {
-  color: #F5F5DC;
-  font-size: 20px;
-  background-color: #800000;
-  border-radius: 10px;
-  padding: 10px;
-  margin-left: 10px;
-  margin-right: 5px;
+  color: #F5F5DC !important;
+  font-size: 20px !important;
+  background-color: #800000 !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  margin-left: 10px !important;
+  margin-right: 5px !important;
+  border-color: #800000 !important;
 }
 
 .uottawa-btn:hover {
-  cursor: pointer;
-  background-color: #970000;
+  cursor: pointer !important;
+  background-color: #970000 !important;
 }
 
 .store-list {

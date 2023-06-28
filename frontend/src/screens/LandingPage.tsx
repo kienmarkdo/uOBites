@@ -1,6 +1,8 @@
 import React from 'react';
 import '../styles.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import StoreIcon from './components/StoreIcon';
 import BentoSushiLogo from "../images/bento_sushi_logo.png";
 import ThaiExpressLogo from "../images/thai_express_logo.png";
@@ -12,8 +14,6 @@ import GoCafeLogo from "../images/go_cafe_logo.png";
 import FlourKitchenLogo from "../images/flour_kitchen_logo.png";
 import SecondCupLogo from "../images/second_cup_logo.png";
 import ParamountLogo from "../images/paramount_logo.png";
-import { useNavigate } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 
 // idk if there's a better way to do it, cause the import statements gets long as we continue adding all the stores
 // and u cannot add the path to an image directly in the code below
@@ -44,15 +44,12 @@ const LandingPage = () => {
       <div className='landing-header'>
         <h1 style={{ fontSize: "45px" }}>UOBITES</h1>
         <div className='button-container'>
-          <button className='uottawa-btn'>
+          <Button className='uottawa-btn'>
             Login
-          </button>
-          {/* <Button className='uottawa-btn'>
-            Login
-          </Button> */}
-          <button className='uottawa-btn' onClick={navigateToRegistrationPage}>
+          </Button>
+          <Button className='uottawa-btn' onClick={navigateToRegistrationPage}>
             Register
-          </button>
+          </Button>
         </div>
       </div>
       <div className='landing-body'>

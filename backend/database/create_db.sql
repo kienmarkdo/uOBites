@@ -18,7 +18,7 @@ CREATE TABLE IF NOT EXISTS User_account (
 );
 
 -- Admin Account - do we need this?
--- idk since admin doesn't have any additional attribes 
+-- idk since admin doesn't have any additional attributes 
 CREATE TABLE IF NOT EXISTS Admin_account(
     admin_id SERIAL PRIMARY KEY,  
     user_id INTEGER NOT NULL,

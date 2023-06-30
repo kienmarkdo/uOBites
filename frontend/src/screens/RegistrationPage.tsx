@@ -1,8 +1,10 @@
 import React, { ChangeEvent, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.css';
+import '../styles.scss';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import '../styles.scss';
+import { InputGroup } from "react-bootstrap";
+import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
 
 const RegistrationPage = () => {
 
@@ -14,6 +16,9 @@ const RegistrationPage = () => {
     const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
     const [doesPasswordMatch, setDoesPasswordMatch] = useState<boolean>(true);
     const [isValidAccount, setIsValidAccount] = useState<boolean>(false);
+
+    const [showPassword1, setShowPassword1] = useState<boolean>(false);
+    const [showPassword2, setShowPassword2] = useState<boolean>(false);
 
     const handleAndValidateEmail = (event: ChangeEvent<HTMLInputElement>) => {
         
@@ -58,28 +63,83 @@ const RegistrationPage = () => {
                 <h3 className="text-center">Register now to start ordering from uOBites</h3>
                 <Form.Group className="mt-2 mb-4">
                     <Form.Label>Enter your first name</Form.Label>
-                    <Form.Control required id="firstName" type="text" placeholder="John" value={firstName} onChange={(event) => setFirstName(event.target.value)}/>
+                    <Form.Control
+                        required
+                        id="firstName"
+                        type="text"
+                        placeholder="John"
+                        value={firstName}
+                        onChange={(event) => setFirstName(event.target.value)}
+                    />
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
                     <Form.Label>Enter your last name</Form.Label>
-                    <Form.Control required id="lastName" type="text" placeholder="Doe" value={lastName} onChange={(event) => setLastName(event.target.value)} />
+                    <Form.Control
+                        required
+                        id="lastName"
+                        type="text"
+                        placeholder="Doe"
+                        value={lastName}
+                        onChange={(event) => setLastName(event.target.value)}
+                    />
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
                     <Form.Label>Enter your email address:</Form.Label>
-                    <Form.Control required id="email" type="email" placeholder="example@gmail.com" value={email} onChange={handleAndValidateEmail} />
+                    <Form.Control
+                        required
+                        id="email"
+                        type="email"
+                        placeholder="example@gmail.com"
+                        value={email}
+                        onChange={handleAndValidateEmail}
+                    />
                     {!isEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
                     <Form.Label>Enter your password</Form.Label>
-                    <Form.Control required id="password1" type="password" placeholder="Enter password" value={password1} onChange={handleAndValidatePassword} />
+                    <InputGroup>
+                        <Form.Control
+                            required
+                            id="password1"
+                            type={showPassword1 ? "text" : "password"}
+                            placeholder="Enter password"
+                            value={password1}
+                            onChange={handleAndValidatePassword}
+                        />
+                        <Button
+                            variant="outline-secondary"
+                            className="password-icon-container"
+                        >
+                            {showPassword1 ?
+                                <EyeFill color="grey" onClick={() => setShowPassword1(!showPassword1)} /> :
+                                <EyeSlashFill color="grey" onClick={() => setShowPassword1(!showPassword1)} />}
+                        </Button>
+                    </InputGroup>
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
                     <Form.Label>Confirm your password</Form.Label>
-                    <Form.Control required id="password2" type="password" placeholder="Enter password" value={password2} onChange={handleAndValidatePassword} />
+                    <InputGroup>
+                        <Form.Control
+                            required
+                            id="password2"
+                            type={showPassword2 ? "text" : "password"}
+                            placeholder="Enter password"
+                            value={password2}
+                            onChange={handleAndValidatePassword}
+                        />
+                        <Button
+                            variant="outline-secondary"
+                            className="password-icon-container"
+                        >
+                            {showPassword2 ?
+                                <EyeFill color="grey" onClick={() => setShowPassword2(!showPassword2)} /> :
+                                <EyeSlashFill color="grey" onClick={() => setShowPassword2(!showPassword2)} />}
+                        </Button>
+                    </InputGroup>
                     {!doesPasswordMatch && <small className="text-danger">Passwords do not match</small>}
                 </Form.Group>
                 <div className="text-center">
-                    <Button className="uottawa-btn mt-4" type="submit">
+                    <Button className="uottawa-btn" type="submit">
                         Create account
                     </Button>
                 </div>

@@ -36,7 +36,7 @@ const LandingPage = () => {
   ]
 
   const navigateToRegistrationPage = () => {
-    navigate('/registration'); // Replace '/registration' with the actual path to the RegistrationPage component
+    navigate('/registration');
   };
   
   return (

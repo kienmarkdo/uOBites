@@ -29,7 +29,6 @@ const RegistrationPage = () => {
                 <Button className="uottawa-btn" type="submit">
                     Click here to submit form
                 </Button>
-                {/* idk why the class style is not applying to the Button */}
             </Form>
         </div>
     )

@@ -38,13 +38,17 @@ const LandingPage = () => {
   const navigateToRegistrationPage = () => {
     navigate('/registration');
   };
+
+  const navigateToLoginPage = () => {
+    navigate('/login');
+  };
   
   return (
     <>
       <div className='landing-header'>
         <h1 style={{ fontSize: "45px" }}>UOBITES</h1>
         <div className='button-container'>
-          <Button className='uottawa-btn'>
+          <Button className='uottawa-btn' onClick={navigateToLoginPage}>
             Login
           </Button>
           <Button className='uottawa-btn' onClick={navigateToRegistrationPage}>

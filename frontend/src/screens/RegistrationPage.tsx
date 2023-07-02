@@ -143,7 +143,7 @@ const RegistrationPage = () => {
                         Create account
                     </Button>
                 </div>
-                {isValidAccount && <h3>Successful created account!</h3>} 
+                {isValidAccount && <h3>Successfully created account!</h3>} 
             </Form>
         </>
     )

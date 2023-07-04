@@ -37,3 +37,34 @@ CREATE TABLE IF NOT EXISTS Food_orders (
         order_status IN ('In Progress', 'Ready', 'Completed', 'Cancelled')
     ) -- status must be In Progress, Ready, Completed, or Cancelled
 );
+
+-- Food Outlet
+CREATE TABLE IF NOT EXISTS Food_outlet (
+    outlet_id SERIAL PRIMARY KEY,
+    outlet_name VARCHAR(255),
+    outlet_location VARCHAR(255),
+    -- sum of all ratings
+    total_rating_points INTEGER,
+    -- the number of users who have rated this food outlet
+    total_num_of_ratings INTEGER,
+    -- Example of ratings:
+    -- total_rating_points = 4 + 5 + 3 + 2 (existing ratings)
+    -- total_num_of_ratings = 4 (people who rated)
+    -- to calculate food outlet's ratings: rating = total_rating_points / total_num_of_ratings
+    -- add a new rating from user Bob, who gives a rating of 4
+    -- total_rating_points = (4 + 5 + 3 + 2) + 4
+    -- total_num_of_ratings = 5 + 1
+    CONSTRAINT total_rating_points >= 0,
+    CONSTRAINT total_num_of_ratings >= 0
+);
+
+-- Menus of all outlets
+CREATE TABLE IF NOT EXISTS Menu_item (
+    item_id SERIAL PRIMARY KEY,
+    item_name VARCHAR(255),
+    price NUMERIC(10, 2),
+    --fk
+    outlet_id INTEGER NOT NULL,
+    availability BOOLEAN,
+    CONSTRAINT FK_outlet_id FOREIGN KEY(outlet_id) REFERENCES Food_outlet(outlet_id) ON UPDATE CASCADE
+);

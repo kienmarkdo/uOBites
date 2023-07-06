@@ -1,25 +1,33 @@
+.login-pic {
+  background-image: url("./images/uottawa_login.png");
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: grey;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
 .landing-header {
-  height: 30%;
-  padding-top:10px;
+  height: 10%;
+  padding-top: 10px;
   padding-bottom: 10px;
   color: white;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: url("./images/uottawa.jpeg");
-  background-size: cover;
-  background-blend-mode: multiply;
-  background-color: grey;
-  background-position: center;
-  flex-direction: column;
+  flex-direction: row;
+  background-color: #800000;
 }
 
 .landing-body {
-  height: 70%;
+  height: 90%;
   padding: 10px;
   color: white;
   text-align: center;
+  margin-top: 10px;
 }
 
 .uottawa-btn {
@@ -74,5 +82,17 @@
     border-color: #DBDADA !important;
     border-left: none !important;
     background-color: white !important;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
 }
 

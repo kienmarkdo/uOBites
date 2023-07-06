@@ -5,8 +5,11 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { InputGroup } from "react-bootstrap";
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
+import { useNavigate } from "react-router-dom";
 
 const RegistrationPage = () => {
+
+    const navigate = useNavigate();
 
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
@@ -53,6 +56,7 @@ const RegistrationPage = () => {
 
         if (isEmailValid && doesPasswordMatch) {
             console.log("Creating account in DB")
+            navigate('/');
         }
         //more code afer this line when backend is implemented 
     }

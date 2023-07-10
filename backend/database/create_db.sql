@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS User_account (
     password VARCHAR(255) NOT NULL,
     firstName VARCHAR(255) NOT NULL,
     lastName VARCHAR(255) NOT NULL,
-    flex_card VARCHAR(255),
+    flex_card VARCHAR(255)
 );
 
 -- Food Orders
@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS Food_orders (
     total_price NUMERIC(10, 2),
     -- fk: id of the customer to which this food order belongs
     cust_id INTEGER NOT NULL,
-    CONSTRAINT FK_cust_id FOREIGN KEY(cust_id) REFERENCES Customer_account(cust_id) ON UPDATE CASCADE ON DELETE CASCADE,
+    CONSTRAINT FK_cust_id FOREIGN KEY(cust_id) REFERENCES User_account(user_id) ON UPDATE CASCADE ON DELETE CASCADE,
     CONSTRAINT Status_check CHECK(
         order_status IN ('In Progress', 'Ready', 'Completed', 'Cancelled')
     ) -- status must be In Progress, Ready, Completed, or Cancelled
@@ -44,18 +44,15 @@ CREATE TABLE IF NOT EXISTS Food_outlet (
     outlet_name VARCHAR(255),
     outlet_location VARCHAR(255),
     -- sum of all ratings
-    total_rating_points INTEGER,
+    total_rating_points INTEGER CHECK (total_rating_points >= 0),
     -- the number of users who have rated this food outlet
-    total_num_of_ratings INTEGER,
-    -- Example of ratings:
+    total_num_of_ratings INTEGER CHECK (total_num_of_ratings >= 0) -- Example of ratings:
     -- total_rating_points = 4 + 5 + 3 + 2 (existing ratings)
     -- total_num_of_ratings = 4 (people who rated)
     -- to calculate food outlet's ratings: rating = total_rating_points / total_num_of_ratings
     -- add a new rating from user Bob, who gives a rating of 4
     -- total_rating_points = (4 + 5 + 3 + 2) + 4
     -- total_num_of_ratings = 5 + 1
-    CONSTRAINT total_rating_points >= 0,
-    CONSTRAINT total_num_of_ratings >= 0
 );
 
 -- Menus of all outlets

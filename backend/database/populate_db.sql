@@ -11,18 +11,22 @@ INSERT INTO
     User_account
 VALUES
     (
-        1,
-        "kien@kien.com",
-        "ABCD1234",
-        "Kien",
-        "D",
-        ""
-    ),
+        DEFAULT,
+        'kien@kien.com',
+        'ABCD1234',
+        'Kien',
+        'D',
+        NULL
+    );
+
+INSERT INTO
+    User_account
+VALUES
     (
-        2,
-        "bob@bob.com",
-        "ABCD1234",
-        "Bob",
-        "Marley",
-        ""
+        DEFAULT,
+        'bob@bob.com',
+        'ABCD1234',
+        'Bob',
+        'Marley',
+        '123123123'
     );

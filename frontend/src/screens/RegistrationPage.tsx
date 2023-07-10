@@ -14,6 +14,7 @@ const RegistrationPage = () => {
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
+    const [studentNumber, setStudentNumber] = useState<number | undefined>();
     const [password1, setPassword1] = useState<string>("");
     const [password2, setPassword2] = useState<string>("");
     const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
@@ -49,6 +50,7 @@ const RegistrationPage = () => {
         console.log(firstName);
         console.log(lastName);
         console.log(email);
+        console.log(studentNumber);
         console.log(password1);
         console.log(password2);
 
@@ -66,7 +68,7 @@ const RegistrationPage = () => {
             <Form className="container p-5" onSubmit={handleSubmit}>
                 <h3 className="text-center">Register now to start ordering from uOBites</h3>
                 <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Enter your first name</Form.Label>
+                    <Form.Label>First name <span className="text-danger">*</span></Form.Label>
                     <Form.Control
                         required
                         id="firstName"
@@ -77,7 +79,7 @@ const RegistrationPage = () => {
                     />
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Enter your last name</Form.Label>
+                    <Form.Label>Last name <span className="text-danger">*</span></Form.Label>
                     <Form.Control
                         required
                         id="lastName"
@@ -88,7 +90,7 @@ const RegistrationPage = () => {
                     />
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Enter your email address:</Form.Label>
+                    <Form.Label>Email address <span className="text-danger">*</span></Form.Label>
                     <Form.Control
                         required
                         id="email"
@@ -100,7 +102,17 @@ const RegistrationPage = () => {
                     {!isEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Enter your password</Form.Label>
+                    <Form.Label>uOttawa flex card number if applicable (Student number)</Form.Label>
+                    <Form.Control
+                        id="flexCard"
+                        type="number"
+                        placeholder="300193369"
+                        value={studentNumber || ""}
+                        onChange={(event) => setStudentNumber(parseInt(event.target.value))}
+                    />
+                </Form.Group>
+                <Form.Group className="mt-2 mb-4">
+                    <Form.Label>Password <span className="text-danger">*</span></Form.Label>
                     <InputGroup>
                         <Form.Control
                             required
@@ -121,7 +133,7 @@ const RegistrationPage = () => {
                     </InputGroup>
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Confirm your password</Form.Label>
+                    <Form.Label>Confirm password <span className="text-danger">*</span></Form.Label>
                     <InputGroup>
                         <Form.Control
                             required

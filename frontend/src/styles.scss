@@ -1,0 +1,98 @@
+.login-pic {
+  background-image: url("./images/uottawa_login.png");
+  background-size: cover;
+  background-blend-mode: multiply;
+  background-color: grey;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center
+}
+
+.landing-header {
+  height: 10%;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: white;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: #800000;
+}
+
+.landing-body {
+  height: 90%;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.uottawa-btn {
+  color: #F5F5DC !important;
+  font-size: 20px !important;
+  background-color: #800000 !important;
+  border-radius: 10px !important;
+  padding: 10px !important;
+  margin-left: 10px !important;
+  margin-right: 5px !important;
+  border-color: #800000 !important;
+}
+
+.uottawa-btn:hover {
+  cursor: pointer !important;
+  background-color: #970000 !important;
+}
+
+.store-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+
+.store-icon-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.store-icon-img {
+  height: 100px;
+  margin-left: 35px;
+  margin-right: 35px;
+  transition: transform 0.3s;
+  margin-bottom: 5px;
+}
+
+.store-icon-img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.password-icon-container {
+    border-color: #DBDADA !important;
+    border-left: none !important;
+    background-color: white !important;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.register-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+

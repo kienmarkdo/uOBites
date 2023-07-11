@@ -7,3 +7,50 @@
  * That Python script will automatically execute this file. 
  * You can verify the changes in your local Postgres database using PSQL Shell or PgAdmin.
  */
+INSERT INTO
+    User_account
+VALUES
+    (
+        DEFAULT,
+        'kien@kien.com',
+        'ABCD1234',
+        'Kien',
+        'D',
+        NULL
+    );
+
+INSERT INTO
+    User_account
+VALUES
+    (
+        DEFAULT,
+        'bob@bob.com',
+        'ABCD1234',
+        'Bob',
+        'Marley',
+        123123123
+    );
+
+INSERT INTO
+    User_account
+VALUES
+    (
+        DEFAULT,
+        'celine@uottawa.ca',
+        'password123',
+        'Celine',
+        'Wan',
+        123582920
+    );
+
+INSERT INTO
+    User_account
+VALUES
+    (
+        DEFAULT,
+        'amy@uottawa.ca',
+        'abc1234',
+        'Amy',
+        'Kkiti',
+        123109393
+    );

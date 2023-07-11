@@ -10,6 +10,7 @@ that is executed to create the database schema, populate it with starting inform
 # Global variables #
 ####################
 path_to_create_schema_file = "create_db.sql"
+path_to_populate_db = "populate_db.sql"
 uobites_db_name = "uobites_db"
 db_password = config.postgres_password  # Add Postgres password in config.py
 sql_commands = [
@@ -71,10 +72,26 @@ def populate_uobites_database():
     Populates the uobites database with starter information
     This function should only be run if the uobites schema has been created
     '''
-    print("TO BE IMPLEMENTED")  # TODO: To be implemented once create_db.sql is done
+    # connect to uobites postgres database
+    conn = psycopg2.connect(host="localhost", dbname=uobites_db_name,
+                            user="postgres", password=db_password, port=5432)  # establish a connection to the db
+    conn.autocommit = True
+    cursor = conn.cursor()  # allows sql command execution
+
+    # open the schema sql file that contains all SQL commands to create the db schema
+    with open(path_to_populate_db, "r") as populate_db_file:
+        populate_db_script = populate_db_file.read()
+
+    # execute create schema script
+    cursor.execute(populate_db_script)
+
+    # sends commands to the database ; close cursor and connection
+    conn.commit()
+    cursor.close()
+    conn.close()
 
 
 if __name__ == "__main__":
     create_uobites_database()  # should be run first no matter what
     create_uobites_schema()  # should be run second no matter what
-    populate_uobites_database()  # should be run third no matter what
+    populate_uobites_database()  # must be run after create_uobites_schema

@@ -25,6 +25,9 @@ const RegistrationPage = () => {
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
 
+    const [registerStatusMessage, setRegisterStatusMessage] = useState<string>(""); // to display success/failed status after clicking Create Account button
+    const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("primary");
+
     const handleAndValidateEmail = (event: ChangeEvent<HTMLInputElement>) => {
         
         const emailInput = event.target.value;
@@ -68,26 +71,29 @@ const RegistrationPage = () => {
             }
 
             try {
-                const response = await axios.post("/register_account", formData);
+                const response = await axios.post("/register_user", formData);
                 console.log(response.data);
-                // Handle the response, e.g., show success message or redirect
-                navigate('/');
 
-                setIsValidAccount(true); //TODO: I want to output a "successfully to create user" here
+                // Handle the response
+                if (response.data.message === "Username already exists") {
+                    setRegisterStatusMessage(response.data.message);
+                    setRegisterStatusVariant("danger");
 
+                } else if (response.data.message === "User registered successfully") {
+                    setRegisterStatusMessage(response.data.message);
+                    setRegisterStatusVariant("success");
+                    navigate('/');
+                    setIsValidAccount(true);
+                }
           
               } catch (error) {
                 console.error("Error:", error);
-                // Handle the error, e.g., show error message
-                alert("log in failed")
-                setIsValidAccount(false); //TODO: I want to output a "failed to create user" here
-                
-
+                setRegisterStatusMessage("ERROR: Unexpected Error. Please refresh the page and try again.");
+                setRegisterStatusVariant("danger");
+                setIsValidAccount(false);
               }
-        }
+        } // end if
 
-        
-        //more code afer this line when backend is implemented 
     }
 
     return (
@@ -187,7 +193,7 @@ const RegistrationPage = () => {
                     </Button>
                 </div>
                 <br />
-                {isValidAccount && <Alert variant="success">Successfully Created Account For {firstName + lastName}!</Alert>} 
+                {isValidAccount && <Alert variant={registerStatusVariant}>{registerStatusMessage}</Alert>} 
             </Form>
         </>
     )

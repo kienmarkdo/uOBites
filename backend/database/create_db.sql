@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS User_account (
     password VARCHAR(255) NOT NULL,
     firstName VARCHAR(255) NOT NULL,
     lastName VARCHAR(255) NOT NULL,
-    flex_card VARCHAR(255)
+    flex_card INTEGER NULL
 );
 
 -- Food Orders

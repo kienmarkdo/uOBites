@@ -34,8 +34,6 @@ const LoginPage = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault(); //prevent reload for custom handling
-    console.log(email);
-    console.log(password);
 
     setIsValidAccount(isEmailValid && doesPasswordMatch);
 

@@ -51,12 +51,6 @@ const RegistrationPage = () => {
 
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(firstName);
-        console.log(lastName);
-        console.log(email);
-        console.log(flexCard);
-        console.log(password1);
-        console.log(password2);
 
         setIsValidAccount(isEmailValid && passwordIsValid);
 

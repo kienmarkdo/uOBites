@@ -13,8 +13,8 @@ CREATE TABLE IF NOT EXISTS User_account (
     -- email is username
     email VARCHAR(255) NOT NULL,
     password VARCHAR(255) NOT NULL,
-    firstName VARCHAR(255) NOT NULL,
-    lastName VARCHAR(255) NOT NULL,
+    first_name VARCHAR(255) NOT NULL,
+    last_name VARCHAR(255) NOT NULL,
     flex_card INTEGER NULL
 );
 

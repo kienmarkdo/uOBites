@@ -3,9 +3,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles.scss';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { InputGroup } from "react-bootstrap";
+import { Alert, InputGroup } from "react-bootstrap";
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const RegistrationPage = () => {
 
@@ -14,11 +15,11 @@ const RegistrationPage = () => {
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
-    const [studentNumber, setStudentNumber] = useState<number | undefined>();
+    const [flexCard, setFlexCard] = useState<number | undefined>();
     const [password1, setPassword1] = useState<string>("");
     const [password2, setPassword2] = useState<string>("");
     const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
-    const [doesPasswordMatch, setDoesPasswordMatch] = useState<boolean>(true);
+    const [passwordIsValid, setPasswordIsValid] = useState<boolean>(true);
     const [isValidAccount, setIsValidAccount] = useState<boolean>(false);
 
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
@@ -38,28 +39,54 @@ const RegistrationPage = () => {
         const password = event.target.value;
         if (id === "password1") {
             setPassword1(password);
-            setDoesPasswordMatch(password === password2);
+            setPasswordIsValid(password === password2);
         } else if (id === "password2") {
             setPassword2(password);
-            setDoesPasswordMatch(password1 === password);
+            setPasswordIsValid(password1 === password);
         }
     }
 
-    const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
         console.log(firstName);
         console.log(lastName);
         console.log(email);
-        console.log(studentNumber);
+        console.log(flexCard);
         console.log(password1);
         console.log(password2);
 
-        setIsValidAccount(isEmailValid && doesPasswordMatch);
+        setIsValidAccount(isEmailValid && passwordIsValid);
 
-        if (isEmailValid && doesPasswordMatch) {
-            console.log("Creating account in DB")
-            navigate('/');
+        if (isEmailValid && passwordIsValid) {
+            console.log("Creating account in DB...")
+            const formData = {
+                email: email,
+                password: password2,
+                first_name: firstName,
+                last_name: lastName,
+                flex_card: flexCard,
+            }
+
+            try {
+                const response = await axios.post("/register_account", formData);
+                console.log(response.data);
+                // Handle the response, e.g., show success message or redirect
+                navigate('/');
+
+                setIsValidAccount(true); //TODO: I want to output a "successfully to create user" here
+
+          
+              } catch (error) {
+                console.error("Error:", error);
+                // Handle the error, e.g., show error message
+                alert("log in failed")
+                setIsValidAccount(false); //TODO: I want to output a "failed to create user" here
+                
+
+              }
         }
+
+        
         //more code afer this line when backend is implemented 
     }
 
@@ -107,8 +134,8 @@ const RegistrationPage = () => {
                         id="flexCard"
                         type="number"
                         placeholder="300193369"
-                        value={studentNumber || ""}
-                        onChange={(event) => setStudentNumber(parseInt(event.target.value))}
+                        value={flexCard || ""}
+                        onChange={(event) => setFlexCard(parseInt(event.target.value))}
                     />
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
@@ -152,14 +179,15 @@ const RegistrationPage = () => {
                                 <EyeSlashFill color="grey" onClick={() => setShowPassword2(!showPassword2)} />}
                         </Button>
                     </InputGroup>
-                    {!doesPasswordMatch && <small className="text-danger">Passwords do not match</small>}
+                    {!passwordIsValid && <small className="text-danger">Passwords do not match</small>}
                 </Form.Group>
                 <div className="text-center">
                     <Button className="uottawa-btn" type="submit">
                         Create account
                     </Button>
                 </div>
-                {isValidAccount && <h3>Successfully created account!</h3>} 
+                <br />
+                {isValidAccount && <Alert variant="success">Successfully Created Account For {firstName + lastName}!</Alert>} 
             </Form>
         </>
     )

@@ -30,3 +30,27 @@ VALUES
         'Marley',
         123123123
     );
+
+INSERT INTO
+    User_account
+VALUES
+    (
+        DEFAULT,
+        'celine@uottawa.ca',
+        'password123',
+        'Celine',
+        'Wan',
+        123582920
+    );
+
+INSERT INTO
+    User_account
+VALUES
+    (
+        DEFAULT,
+        'amy@uottawa.ca',
+        'abc1234',
+        'Amy',
+        'Kkiti',
+        123109393
+    );

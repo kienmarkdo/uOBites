@@ -37,7 +37,7 @@ const LoginPage = () => {
     setIsModalEmailValid(emailRegex.test(emailInput));
   }
 
-  const handleSubmimtModal = () =>{
+  const handleSubmitModal = () =>{
     if (isModalEmailValid){
       console.log("Sending email: ", modalEmail, " to admin");
       setShow(false);
@@ -176,7 +176,7 @@ const LoginPage = () => {
           <Button variant="secondary" onClick={handleCloseModal}>
             Close
           </Button>
-          <Button className="uottawa-modal-btn" variant="primary" onClick={handleSubmimtModal}>
+          <Button className="uottawa-modal-btn" variant="primary" onClick={handleSubmitModal}>
             Submit
           </Button>
         </Modal.Footer>

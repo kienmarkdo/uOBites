@@ -65,6 +65,32 @@ def register_user():
     return jsonify({'message': 'User registered successfully'})
     # return "Success"
 
+@app.route("/login_user", methods=["POST"])
+def login_user():
+    """
+    API endpoint that logs in a user
+    """
+    conn = connect_to_database()
+    c1 = conn.cursor()
+
+    data = request.get_json()
+    email = data["email"]
+    password = data["password"]
+
+    query = "SELECT * FROM user_account WHERE email = %s AND password = %s"
+    values = (email,password)
+    c1.execute(query, values)
+
+    entry = c1.fetchone()
+    c1.close()
+    conn.close()
+
+    # if email and password match an account
+    if entry:
+        return jsonify({'exists':True, 'message':'Login successful'})
+    else:
+        return jsonify({'exists':False, 'message':'Wrong password or email entered'})
+    
 
 @app.route("/get_all_users", methods=["GET"])
 def get_all_users():

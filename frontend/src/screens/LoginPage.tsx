@@ -3,6 +3,7 @@ import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Alert, InputGroup } from "react-bootstrap";
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
+import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
@@ -15,9 +16,35 @@ const LoginPage = () => {
   const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [isValidAccount, setIsValidAccount] = useState<boolean>(false);
- 
+  
   const [registerStatusMessage, setRegisterStatusMessage] = useState<string>(""); // to display success/failed status after clicking Create Account button
   const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("primary");
+  
+  //modal portion
+  const [show, setShow] = useState(false);
+  const [isModalEmailValid, setIsModalEmailValid] = useState<boolean>(false);
+  const [modalEmail, setModalEmail] = useState<string>('');
+  const [modalSubmitted, setModalSubmitted] = useState(false);
+  const handleCloseModal = () => setShow(false);
+  const handleShowModal = () => setShow(true);
+
+  const handleAndValidateModalEmail = (event: ChangeEvent<HTMLInputElement>) => {
+        
+    const emailInput = event.target.value;
+    setModalEmail(emailInput);
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsModalEmailValid(emailRegex.test(emailInput));
+  }
+
+  const handleSubmimtModal = () =>{
+    if (isModalEmailValid){
+      console.log("Sending email: ", modalEmail, " to admin");
+      setShow(false);
+      setModalSubmitted(true);
+    }
+  }
+  //end modal portion
 
   const handleAndValidateEmail = (event: ChangeEvent<HTMLInputElement>) => {
         
@@ -59,9 +86,6 @@ const LoginPage = () => {
         }else if (response.data.message === "Wrong password or email entered"){
           setRegisterStatusMessage(response.data.message);
           setRegisterStatusVariant("danger");
-          //TODO
-          //ask to change pw
-          //popup window
         }
 
       }catch(error){
@@ -92,7 +116,7 @@ const LoginPage = () => {
             required
             id="email"
             type="email"
-            placeholder="example@gmail.com"
+            placeholder="name@example.com"
             value={email}
             style={{width: "40%"}}
             onChange={handleAndValidateEmail}
@@ -119,7 +143,45 @@ const LoginPage = () => {
                 <EyeSlashFill color="grey" onClick={() => setShowPassword(!showPassword)} />}
             </Button>
           </InputGroup>
+          <div className="text-center">
+            <h6 className="register-link mt-3" onClick={handleShowModal}>Forgot Password?</h6>
+          </div>
         </Form.Group>
+
+        {/* For forget password modal popup */}
+        <Modal className="modal-style" show={show} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Forgot Password?</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mt-2 mb-4 form-field">
+              <Form.Label>Please enter your email address for further assistance, an administrator will contact you in 1-3 business days.
+              </Form.Label>
+              <Form.Control
+                required
+                id="modalEmail"
+                type="email"
+                placeholder="name@example.com"
+                value={modalEmail}
+                autoFocus
+                onChange={handleAndValidateModalEmail}
+              />
+              {!isModalEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
+               
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+          <Button className="uottawa-modal-btn" variant="primary" onClick={handleSubmimtModal}>
+            Submit
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
         <div className="text-center">
           <Button className="uottawa-btn" type="submit">
             Log in
@@ -127,6 +189,7 @@ const LoginPage = () => {
           <h6 className="register-link mt-3" onClick={navigateToRegistrationPage}>Don't have an account? Register here</h6>
         </div>
         {isValidAccount && <Alert variant={registerStatusVariant}>{registerStatusMessage}</Alert>} 
+        {modalSubmitted && <Alert variant={"success"}>{"Email sent to administrator successfully!"}</Alert>}
       </Form>
     </>
   );

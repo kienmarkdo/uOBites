@@ -86,4 +86,25 @@
         "Saturday - Sunday": "Closed"
     },
     "exception:": "CLOSED FOR SUMMER"
+},
+{
+    "foodOutletId": 10,
+    "name": "305 Juice bar (UCU)",
+    "Location": "University Centre, level 1",
+    "hoursOfOperation": {
+        "Monday - Thursday": "8:30am - 6:00pm",
+        "Friday": "8:30am - 5:00pm",
+        "Saturday - Sunday": "Closed"
+    },
+    "exception:": "CLOSED FOR SUMMER"
+},
+{
+    "foodOutletId": 11,
+    "name": "Pizza 800 (STE)",
+    "Location": "STE - SITE, room 1040  800 King Edward Ave",
+    "hoursOfOperation": {
+        "Monday - Friday": "11:00am - 7:00pm",
+        "Saturday - Sunday": "Closed"
+    },
+    "exception:": "CLOSED FOR SUMMER"
 }]

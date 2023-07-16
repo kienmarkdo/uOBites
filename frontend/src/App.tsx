@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import LandingPage from "./screens/LandingPage"
 import RegistrationPage from './screens/RegistrationPage';
@@ -25,7 +24,6 @@ const App = () => {
                 <Route path="/home/outletMenu/8" element={<MenuPage />} />
                 <Route path="/home/outletMenu/9" element={<MenuPage />} />
                 <Route path="/home/outletMenu/10" element={<MenuPage />} />
-                <Route path="/home/outletMenu/11" element={<MenuPage />} />
                 <Route path="*" element={<NoRouteFound />} />
             </Routes>
         </BrowserRouter>

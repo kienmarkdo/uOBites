@@ -1,0 +1,62 @@
+import React, { useEffect, useState } from "react";
+import { PersonCircle, BoxArrowRight } from "react-bootstrap-icons";
+import appLogo from "../../images/app_logo_white.png";
+import axios from "axios";
+import { useLocation, useNavigate } from "react-router-dom";
+
+export default function Navbar() {
+
+    const navigate = useNavigate();
+
+    const viewProfile = () => {
+      navigate("/editProfile");
+    };
+
+    const logout = () => {
+        navigate('/');
+    }
+
+    const location = useLocation();
+    const { email } = location.state || {};
+    const [name, setName] = useState<string>("");
+
+    useEffect(() => {
+    const fetchUserInfo = async () => {
+        try {
+        const response = await axios.get("/get_user_info", {
+            params: {
+            email: email,
+            },
+        });
+        setName(response.data["first_name"]);
+        } catch (error) {
+        console.error("Error:", error);
+        }
+    };
+
+    fetchUserInfo();
+    }, [email]);
+
+    return (
+    <div className="landing-header">
+        <div className="d-flex align-items-center">
+        <img src={appLogo} alt="uOBites" width={"5%"} />
+        <h4 className="ms-2 mt-2">Hi {name}!</h4>
+        </div>
+        <div>
+        <PersonCircle
+            size={25}
+            className="landing-page-icon me-4"
+            title="View Profile"
+            onClick={viewProfile}
+        />
+        <BoxArrowRight
+            size={25}
+            className="landing-page-icon me-4"
+            title="Logout"
+            onClick={logout}
+        />
+        </div>
+    </div>
+    );
+}

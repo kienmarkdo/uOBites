@@ -32,7 +32,7 @@ const LandingPage = () => {
   }
 
   const viewProfile = () => {
-    navigate('/editProfile');
+    navigate('/editProfile', {state: {email}});
   }
 
   const storesInfo = [

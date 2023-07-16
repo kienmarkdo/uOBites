@@ -776,4 +776,142 @@
             }
         }
     }
+},
+{
+    "id": 10,
+    "menu": {
+       "Appetizers and Salads":{
+            "Garlic Bread":{
+                "price": 7.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130265703199547492/110-1108904_garlic-bread-png-file-download-free-cheese-garlic.png"
+            },
+            "Caprese":{
+                "price": 13.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130266444769263686/Caprese-Salad-Sq.png"
+            },
+            "Bruschetta":{
+                "price": 9.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130266972052013056/tomato-bruschetta-square-720x720.png"
+            },
+            "Caesar": {
+                "price": 10.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130268397037424640/vegan-caesar-salad-dressing-blackened-chickpeas-square.png"
+            }
+       },
+       "Signature Pizzas (11 inch)":{
+            "Margherita":{
+                "price": 12.75,
+                "image": ""
+            },
+            "Pomodoro":{
+                "price": 12.75,
+                "image": "" 
+            },
+            "Quattro Fromaggi":{
+                "price": 14.75,
+                "image": ""
+            },
+            "Hawaiian":{
+                "price": 13.25,
+                "image": "" 
+            }
+        },
+        "Pastas":{
+            "Pasta con Salsicca":{
+                "price": 13.50,
+                "image": ""
+            },
+            "Pasta con Pesto":{
+                "price": 13.50,
+                "image": "" 
+            },
+            "Spaghetti and Meatballs":{
+                "price": 17.00,
+                "image": ""
+            }
+        },
+        "Sandwiches":{
+            "Formaggio":{
+                "price": 10.00,
+                "image": "" 
+            },
+            "Ortaggio":{
+                "price": 12.00,
+                "image": "" 
+            },
+            "Three Little Pigs":{
+                "price": 11.00,
+                "image": ""
+            }
+        },
+        "Desserts":{
+            "Chocolate Banana Turnover":{
+                "price": 9.00,
+                "image": ""
+            },
+            "Bowl of Gelato":{
+                "price": 7.00,
+                "image": "" 
+            }
+        },
+        "Beverages": {
+            "Diet Coke":{
+                "price": 3.00,
+                "image": "" 
+            },
+            "Ginger Ale":{
+                "price": 3.00,
+                "image": "" 
+            },
+            "Iced Tea":{
+                "price": 3.00,
+                "image": "" 
+            },
+            "Lemonade":{
+                "price": 3.00,
+                "image": "" 
+            },
+            "Acqua Panna":{
+                "price": 3.00,
+                "image": "" 
+            }
+        },
+        "Specials":{
+            "Vegan Salsiccia":{
+                "price": 14.50,
+                "image": "" 
+            },
+            "Vegan Pasta Primavera":{
+                "price": 13.50,
+                "image": "" 
+            }
+        },
+        "Beer and Wine":{
+            "Miller light":{
+                "price": 3.00,
+                "image": "" 
+            },
+            "Yuengling Lager":{
+                "price": 3.00,
+                "image": "" 
+            },
+            "Stella Artois":{
+                "price": 4.00,
+                "image": ""
+            },
+            "Peroni":{
+                "price": 4.00,
+                "image": "" 
+            },
+            "Framboise":{
+                "price": 7.50,
+                "image": "" 
+            },
+            "Bell's Two Hearted (16oz can)":{
+                "price": 5.00,
+                "image": ""
+            }
+        }
+
+    }
 }]

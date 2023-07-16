@@ -1,36 +1,45 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import '../styles.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { useLocation, useNavigate } from 'react-router-dom';
-import { Routes, Route } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import ViewOutlets from './ViewOutletsPage';
-import MenuPage from './MenuPage';
-import EditProfile from './EditProfile';
+import ViewOutlets from './components/ViewOutlets';
+import { Modal } from 'react-bootstrap';
 
-// idk if there's a better way to do it, cause the import statements gets long as we continue adding all the stores
-// and u cannot add the path to an image directly in the code below
 
 const LandingPage = () => {
 
   const location = useLocation();
-  const {email} = location.state || {};
+  const { email } = location.state || {}; // value is passed from the login page
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  
+  // check whether the user is logged in or not in order to display the correct content
+  useEffect(() => {
+    if (email) {
+      setIsLoggedIn(true);
+    }
+  }, [email]);
   
   return (
     <>
-      <Navbar />
-      
-      <div className='landing-body'>
+      {isLoggedIn ? (
+        <>
+          <Navbar />
+          <ViewOutlets email={ email } />
+        </>
+      ) : (
+        <>
+          <Modal size="lg" centered show={true} className='modal-style'>
+            <Modal.Body>
+              <h4>Error</h4>
+              <p>
+                You have not logged in yet. <Link to={'/'}>Click here to go to the login page.</Link>
+              </p>
+            </Modal.Body>
+          </Modal>
+        </>
+      )}
 
-          <Routes>
-              <Route path="/" element={<ViewOutlets />} />
-              <Route path="/outlet_menu" element={<MenuPage />} />
-              <Route path="/edit_profile" element={<EditProfile />} />
-          </Routes>
-
-      </div>
     </>
   );
 }

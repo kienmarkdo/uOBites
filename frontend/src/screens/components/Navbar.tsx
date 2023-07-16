@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { PersonCircle, BoxArrowRight } from "react-bootstrap-icons";
 import appLogo from "../../images/app_logo_white.png";
 import axios from "axios";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Modal } from "react-bootstrap";
 
 export default function Navbar() {
 
@@ -19,6 +20,7 @@ export default function Navbar() {
     const location = useLocation();
     const { email } = location.state || {};
     const [name, setName] = useState<string>("");
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
     const fetchUserInfo = async () => {
@@ -37,26 +39,65 @@ export default function Navbar() {
     fetchUserInfo();
     }, [email]);
 
+    // check whether the user is logged in or not in order to display the correct content
+    useEffect(() => {
+        if (email) {
+            setIsLoggedIn(true);
+        }
+    }, [email]);
+
     return (
-    <div className="landing-header">
-        <div className="d-flex align-items-center">
-        <img src={appLogo} alt="uOBites" width={"5%"} />
-        <h4 className="ms-2 mt-2">Hi {name}!</h4>
-        </div>
-        <div>
-        <PersonCircle
-            size={25}
-            className="landing-page-icon me-4"
-            title="View Profile"
-            onClick={viewProfile}
-        />
-        <BoxArrowRight
-            size={25}
-            className="landing-page-icon me-4"
-            title="Logout"
-            onClick={logout}
-        />
-        </div>
-    </div>
+        <>
+            {isLoggedIn ? (
+            <>
+                <div className="landing-header">
+                    <div className="d-flex align-items-center">
+                    <img src={appLogo} alt="uOBites" width={"5%"} />
+                    <h4 className="ms-2 mt-2">uOBites - Hi {name}!</h4>
+                    </div>
+                    <div>
+                    <PersonCircle
+                        size={25}
+                        className="landing-page-icon me-4"
+                        title="View Profile"
+                        onClick={viewProfile}
+                    />
+                    <BoxArrowRight
+                        size={25}
+                        className="landing-page-icon me-4"
+                        title="Logout"
+                        onClick={logout}
+                    />
+                    </div>
+                </div>
+            </>
+            ) : (
+            <>
+                <div className="landing-header">
+                    <div className="d-flex align-items-center">
+                    <img src={appLogo} alt="uOBites" width={"5%"} />
+                    <h4 className="ms-2 mt-2">uOBites</h4>
+                    </div>
+                    <div>
+                    <PersonCircle
+                        size={25}
+                        className="landing-page-icon me-4"
+                        title="View Profile"
+                        onClick={viewProfile}
+                    />
+                    <BoxArrowRight
+                        size={25}
+                        className="landing-page-icon me-4"
+                        title="Logout"
+                        onClick={logout}
+                    />
+                    </div>
+                </div>
+            </>
+            )}
+
+
+        </>
+
     );
 }

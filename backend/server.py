@@ -137,17 +137,18 @@ def check_user_exists():
         return jsonify({'exists': False})
 
 
-@app.route("/get_user_info", methods=["POST"])
+@app.route("/get_user_info", methods=["GET"])
 def get_user_info():
     """
     API endpoint that fetches a user's details given their username
     Can also be used to check if a username already exists in the database or not
+    username needs to be passed as a parameter
     """
 
     conn = connect_to_database()
     cur = conn.cursor()
 
-    username = request.form.get("username")
+    username = request.args.get("email")
     cur.execute("SELECT * FROM user_account WHERE email = %s", (username,))
     user = cur.fetchone()
 

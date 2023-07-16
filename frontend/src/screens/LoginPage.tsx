@@ -16,7 +16,7 @@ const LoginPage = () => {
   };
 
   const navigateToLandingPage = () => {
-    navigate('/home');
+    navigate('/home', {state: {email}});
   };
 
   const [email, setEmail] = useState<string>('');

@@ -772,9 +772,51 @@
     "menu": {
         "Specialties": {
             "Classic Poutine": {
-                
+                "price": 10.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130259605226782851/Screenshot_2023-07-16_at_18.08.06.png"
+            },
+            "Chicken Shawarma Poutine": {
+                "price": 11.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130259654480510986/Screenshot_2023-07-16_at_18.08.17.png"
+            },
+            "Beef Shawarma Poutine": {
+                "price": 11.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130259521890164878/Screenshot_2023-07-16_at_18.07.45.png"
+            },
+            "Lentil Soup": {
+                "price": 8.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130258952941219990/Screenshot_2023-07-16_at_18.05.29.png"
+            },
+            "Falafels": {
+                "price": 6.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130262850934419477/Screenshot_2023-07-16_at_18.20.58.png"
+            },
+            "Spicy Potatoes": {
+                "price": 6.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130261996869255289/Screenshot_2023-07-16_at_18.17.33.png"
+            },
+            "Pita": {
+                "price": 3.00,
+                "image": ""
+            }
+        },
+        "Salads": {
+            "Tabbouleh": {
+                "price": 10.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130265580600045699/Screenshot_2023-07-16_at_18.31.47.png"
+            },
+            "Fattoush Salad": {
+                "price": 10.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130267831301316618/Screenshot_2023-07-16_at_18.40.44.png"
+
             }
         }
+    }
+},
+{
+    "id": 9,
+    "menu": {
+
     }
 },
 {

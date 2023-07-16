@@ -193,11 +193,7 @@ def update_user_info():
     flex_card = %s
     where email = %s
     '''
-    print(firstName)
-    print(lastName)
-    print(email)
-    print(flex_card)
-
+    
     values = (firstName, lastName, flex_card, email)
     c1.execute(query, values)
 

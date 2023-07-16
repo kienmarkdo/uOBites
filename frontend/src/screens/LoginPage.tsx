@@ -31,12 +31,15 @@ const LoginPage = () => {
   //modal portion
   const [show, setShow] = useState(false);
   const [isModalEmailValid, setIsModalEmailValid] = useState<boolean>(false);
+  const [hasEnteredModal, setHasEnteredModal] = useState<boolean>(false);
   const [modalEmail, setModalEmail] = useState<string>('');
   const [modalSubmitted, setModalSubmitted] = useState(false);
   const handleCloseModal = () => setShow(false);
   const handleShowModal = () => setShow(true);
 
   const handleAndValidateModalEmail = (event: ChangeEvent<HTMLInputElement>) => {
+
+    setHasEnteredModal(true); // will be called onChange() so this will immediate be set to true when the user types
         
     const emailInput = event.target.value;
     setModalEmail(emailInput);
@@ -46,6 +49,9 @@ const LoginPage = () => {
   }
 
   const handleSubmitModal = () =>{
+
+    setHasEnteredModal(true); // if a user clicks Submit and the input is empty, this will trigger the error msg to display
+
     if (isModalEmailValid){
       console.log("Sending email: ", modalEmail, " to admin");
       setShow(false);
@@ -165,7 +171,8 @@ const LoginPage = () => {
                 autoFocus
                 onChange={handleAndValidateModalEmail}
               />
-              {!isModalEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
+              {!isModalEmailValid && hasEnteredModal && 
+              <small className="text-danger">Please enter a valid email address.</small>}
                
             </Form.Group>
           </Form>

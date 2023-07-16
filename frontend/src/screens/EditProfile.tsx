@@ -174,8 +174,9 @@ const EditProfile = () => {
                     </Button>
                 </div>
                 <br />
+                {isValidUpdate &&
+                    <Alert className="text-center" variant={registerStatusVariant}>{registerStatusMessage}</Alert>} 
             </Form>
-            {isValidUpdate && <Alert variant={registerStatusVariant}>{registerStatusMessage}</Alert>} 
         </>
     )
 }

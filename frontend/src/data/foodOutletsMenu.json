@@ -1,5 +1,5 @@
 [{
-    "foodOutletId": 1,
+    "id": 1,
     "menu": {
         "Sushi": {
             "Dynamite Crunch Roll": {
@@ -84,13 +84,13 @@
     }
 },
 {
-    "foodOutletId": 2,
+    "id": 2,
     "menu": {
         
     }
 },
 {
-    "foodOutletId": 3,
+    "id": 3,
     "menu": {
         "Hot Beverages & Coffee": {
             "Brewed Coffee": {
@@ -135,7 +135,7 @@
                 "price": 3.99,
                 "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130158340920582284/Screenshot_2023-07-16_at_11.25.42.png"
             },
-            "OREO Double Stuf Iced Capp": {
+            "OREO® Double Stuf Iced Capp": {
                 "price": 4.29,
                 "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130158414522236948/Screenshot_2023-07-16_at_11.26.00.png"
             },
@@ -325,7 +325,7 @@
     }
 },
 {
-    "foodOutletId": 4,
+    "id": 4,
     "menu": {
         "Hot Beverages & Coffee": {
             "Brewed Coffee": {
@@ -491,6 +491,260 @@
             "Potato Wedges": {
                 "price": 2.69,
                 "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130165004230995998/Screenshot_2023-07-16_at_11.52.11.png"
+            }
+        }
+    }
+}, 
+{
+    "id": 5,
+    "menu": {
+        "Sandwiches": {
+            "Hamburger": {
+                "price": 7.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130212287882473623/Screenshot_2023-07-16_at_15.00.02.png"
+            },
+            "Cheeseburger": {
+                "price": 8.00,
+                "image": ""
+            },
+            "Chickenburger": {
+                "price": 7.5,
+                "image": ""
+            },
+            "Veggieburger": {
+                "price": 7.5,
+                "image": ""
+            },
+            "Hot Dog": {
+                "price": 3.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130211870138183890/Screenshot_2023-07-16_at_14.58.21.png"
+            },
+            "Cheese Dog": {
+                "price": 3.50, 
+                "image": ""
+            },
+            "Veggie Dog": {
+                "price": 6.00,
+                "image": ""
+            },
+            "Jumbo Dog": {
+                "price": 6.00
+            },
+            "Grilled Cheese sandwich": {
+                "price": 4.50,
+                "image": ""
+            },
+            "BLT": {
+                "price": 6.50,
+                "image": ""
+            },
+            "Pogo": {
+                "price": 3.25
+            }
+        },
+        "Sides": {
+            "Fries": {
+                "price": 6.50,
+                "image": ""
+            },
+            "Poutine": {
+                "price": 8.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130210784249651341/Screenshot_2023-07-16_at_14.54.04.png"
+            },
+            "Chicken fingers": {
+                "price": 8.50,
+                "image": ""
+            },
+            "Pogo": {
+                "price": 3.25,
+                "image": ""
+            },
+            "Onions rings": {
+                "price": 6.00, 
+                "image": ""
+            },
+            "Bratwurst Sausage": {
+                "price": 7.00,
+                "image": ""
+            }, 
+            "Italian Sausage": {
+                "price": 7.00,
+                "image": ""
+            },
+            "Polish Sausage": {
+                "price": 7.00,
+                "image": ""
+            }
+        },
+        "Combos": {
+            "Hamburger Combo": {
+                "price": 14.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130210957193400433/Screenshot_2023-07-16_at_14.54.45.png"
+            },
+            "Chickenburger Combo": {
+                "price": 14.50,
+                "image": ""
+            },
+            "Veggieburger Combo": {
+                "price": 14.50,
+                "image": ""
+            },
+            "Chicken Fingers Combo": {
+                "price": 15.50,
+                "image": ""
+            },
+            "Hot Dog Combo": {
+                "price": 13.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130210644520607754/Screenshot_2023-07-16_at_14.53.26.png"
+            },
+            "Veggie Dog Combo": {
+                "price": 13.00,
+                "image": ""
+            }
+        }
+    }
+}, 
+{
+    "id": 6,
+    "menu": {
+        "Hot Drinks": {
+            "Caffè Misto": {
+                "price": 3.65,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130213234188755065/Screenshot_2023-07-16_at_15.03.49.png"
+            },
+            "Cappuccino": {
+                "price": 4.95,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130213234188755065/Screenshot_2023-07-16_at_15.03.49.png"
+            },
+            "Caramel Macchiato": {
+                "price": 3.75,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130214482342334464/Screenshot_2023-07-16_at_15.08.47.png"
+            },
+            "Caffè Latte": {
+                "price": 3.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130214650663944265/Screenshot_2023-07-16_at_15.09.27.png"
+            },
+            "Caffè Mocha": {
+                "price": 3.75,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130214555734261941/Screenshot_2023-07-16_at_15.09.04.png"
+            },
+            "Chai Thai Latte": {
+                "price": 3.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130215674346733750/Screenshot_2023-07-16_at_15.13.30.png"
+            },
+            "Hot Chocolate": {
+                "price": 2.25,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130216033467256944/Screenshot_2023-07-16_at_15.14.56.png"
+            },
+            "Caramel Apple Spice": {
+                "price": 4.55,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130216176417525923/Screenshot_2023-07-16_at_15.15.31.png"
+            }
+        },
+        "Cold Drinks": {
+            "Coffee Frappuccino® Blended Beverage": {
+                "price": 6.15,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130216668468101200/Screenshot_2023-07-16_at_15.17.29.png"
+            }, 
+            "Caramel Frappuccino® Blended Beverage": {
+                "price": 6.45,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130216896885698710/Screenshot_2023-07-16_at_15.18.23.png"
+            }, 
+            "Mocha Frappuccino® Blended Beverage": {
+                "price": 6.45,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130217430833188925/Screenshot_2023-07-16_at_15.20.31.png"
+            }, 
+            "Espresso Frappuccino® Blended Beverage": {
+                "price": 7.25,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130217488165113878/Screenshot_2023-07-16_at_15.20.44.png"
+            }, 
+            "White Chocolate Mocha Frappuccino® Blended Beverage": {
+                "price": 6.45,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130217555152355388/Screenshot_2023-07-16_at_15.21.00.png"
+            },
+            "Iced Caffè Americano": {
+                "price": 3.95,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130218389424578771/Screenshot_2023-07-16_at_15.24.18.png"
+            }, 
+            "Iced Coffee": {
+                "price": 3.95,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130218761878781952/Screenshot_2023-07-16_at_15.25.47.png"
+            },
+            "Cold Milk": {
+                "price": 3.55,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130219155803623585/Screenshot_2023-07-16_at_15.27.21.png"
+            },
+            "Lemonade": {
+                "price": 2.25, 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130219220819521546/Screenshot_2023-07-16_at_15.27.35.png"
+            }
+        }, 
+        "Hot Breakfast": {
+            "Bacon, Gouda & Egg Sandwich": {
+                "price": 6.15,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130219867384062032/Screenshot_2023-07-16_at_15.30.11.png"
+            },
+            "Everything Croissant & Roasted Ham Sandwich": {
+                "price": 6.65,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130219933117198559/Screenshot_2023-07-16_at_15.30.27.png"
+            }, 
+            "Spinach, Feta and Cage Free Egg White Wrap": {
+                "price": 6.15,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130219987643150346/Screenshot_2023-07-16_at_15.30.40.png"
+            },
+            "Bacon-Style Turkey, Cheddar & Egg White Sandwich": {
+                "price": 6.15,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130220157940273253/Screenshot_2023-07-16_at_15.31.20.png"
+            }
+        }, 
+        "Bakery": {
+            "Double Chocolate Brownie": {
+                "price": 3.95,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130220253683658833/Screenshot_2023-07-16_at_15.31.44.png"
+            },
+            "Butter Croisstant": {
+                "price": 3.95,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130220314496860200/Screenshot_2023-07-16_at_15.31.58.png"
+            },
+            "Chocolate Croissant": {
+                "price": 4.45,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130220348420390984/Screenshot_2023-07-16_at_15.32.06.png"
+            }, 
+            "Cheese Danish": {
+                "price": 3.95,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130220416699478026/Screenshot_2023-07-16_at_15.32.22.png"
+            },
+            "Chocolate Cake Pop": {
+                "price": 3.55,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130222151996297308/Screenshot_2023-07-16_at_15.39.15.png"
+            }
+
+        }
+    }
+}, 
+{
+    "id": 7,
+    "menu": {
+        "Mains": {
+            "Beef Steamed Bun": {
+                "price": 6.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130223577644417135/Screenshot_2023-07-16_at_15.44.54.png"
+            },
+            "Beef Brisket Noodles": {
+                "price": 14.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130223719579668611/Screenshot_2023-07-16_at_15.45.30.png"
+            },
+            "Purple Rice Congee": {
+                "price": 3.75,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130223783207252041/Screenshot_2023-07-16_at_15.45.45.png"
+            },
+            "Pork Steamed Bun": {
+                "price": 5.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130223967651766272/Screenshot_2023-07-16_at_15.46.28.png"
+            },
+            "Zha Jiang Noodles": {
+                "price": 11.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130224053681127475/Screenshot_2023-07-16_at_15.46.49.png"
             }
         }
     }

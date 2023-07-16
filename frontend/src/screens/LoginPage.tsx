@@ -11,14 +11,22 @@ const LoginPage = () => {
 
   const navigate = useNavigate();
 
+  const navigateToRegistrationPage = () => {
+    navigate('/registration');
+  };
+
+  const navigateToLandingPage = () => {
+    navigate('/home');
+  };
+
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
   const [showPassword, setShowPassword] = useState<boolean>(false);
   const [isValidAccount, setIsValidAccount] = useState<boolean>(false);
   
-  const [registerStatusMessage, setRegisterStatusMessage] = useState<string>(""); // to display success/failed status after clicking Create Account button
-  const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("primary");
+  const [loginStatusMessage, setLoginStatusMessage] = useState<string>("");
+  const [loginStatusVariant, setLoginStatusVariant] = useState<string>("");
   
   //modal portion
   const [show, setShow] = useState(false);
@@ -72,38 +80,30 @@ const LoginPage = () => {
         password: password,
       }
 
-      try{
+      try {
         const response = await axios.post("/login_user", formData);
         console.log(response.data);
 
         //Handle response and set status
         if (response.data.message === "Login successful"){
-          setRegisterStatusMessage(response.data.message);
-          setRegisterStatusVariant("success");
-          navigate('/home');
+          setLoginStatusMessage(response.data.message);
+          setLoginStatusVariant("success");
+          navigateToLandingPage();
           setIsValidAccount(true);
 
         }else if (response.data.message === "Wrong password or email entered"){
-          setRegisterStatusMessage(response.data.message);
-          setRegisterStatusVariant("danger");
+          setLoginStatusMessage(response.data.message);
+          setLoginStatusVariant("danger");
         }
 
-      }catch(error){
+      } catch(error){
         console.error("Error:", error);
-        setRegisterStatusMessage("ERROR: Unexpected Error. Please refresh the page and try again.");
-        setRegisterStatusVariant("danger");
+        setLoginStatusMessage("ERROR: Unexpected Error. Please refresh the page and try again.");
+        setLoginStatusVariant("danger");
         setIsValidAccount(false);
       }
     }
   }
-
-  const navigateToRegistrationPage = () => {
-    navigate('/registration');
-  };
-
-  const navigateToLandingPage = () => {
-    navigate('/home');
-  };
 
 
   return (
@@ -188,8 +188,9 @@ const LoginPage = () => {
           </Button>
           <h6 className="register-link mt-3" onClick={navigateToRegistrationPage}>Don't have an account? Register here</h6>
         </div>
-        {isValidAccount && <Alert variant={registerStatusVariant}>{registerStatusMessage}</Alert>} 
-        {modalSubmitted && <Alert variant={"success"}>{"Email sent to administrator successfully!"}</Alert>}
+        {isValidAccount && <Alert variant={loginStatusVariant}>{loginStatusMessage}</Alert>} 
+        {modalSubmitted && <Alert variant={"success"}>{"Success! If your email is registered with uOBites, an \
+        administrator will contact you within 3-5 business days with instructions to recover your account."}</Alert>}
       </Form>
     </>
   );

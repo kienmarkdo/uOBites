@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import { PersonCircle, BoxArrowRight } from "react-bootstrap-icons";
 import appLogo from "../../images/app_logo_white.png";
 import axios from "axios";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-import { Modal } from "react-bootstrap";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Navbar() {
 

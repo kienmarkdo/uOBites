@@ -3,11 +3,10 @@ import 'bootstrap/dist/css/bootstrap.css';
 import '../styles.scss';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { Alert, } from "react-bootstrap";
-import { useNavigate, useLocation } from "react-router-dom";
-import appLogo from "../images/app_logo_white.png";
-import { BoxArrowRight } from 'react-bootstrap-icons';
+import { Alert, Modal, } from "react-bootstrap";
+import { Link, useLocation } from "react-router-dom";
 import axios from "axios";
+import Navbar from "./components/Navbar";
 
 const EditProfile = () => {
 
@@ -24,11 +23,14 @@ const EditProfile = () => {
     const location = useLocation();
     const { email } = location.state || {};
 
-    const navigate = useNavigate();
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-    const logout = () => {
-        navigate('/');
-    }
+    // check whether the user is logged in or not in order to display the correct content
+    useEffect(() => {
+      if (email) {
+        setIsLoggedIn(true);
+      }
+    }, [email]);
 
     const handleAndValidateFlexCard = (event: ChangeEvent<HTMLInputElement>) => {
         const flexCardInput = event.target.value;
@@ -101,83 +103,88 @@ const EditProfile = () => {
         //call function to populate
         fetchUserInfo();
 
-    }, [])
+    }, [email])
     
     return (
         <>
-            <div className='landing-header'> 
-                <div className='d-flex align-items-center'>
-                <img src={appLogo} alt="uOBites" width={"5%"} />
-                </div>
-                <div>
-                <BoxArrowRight
-                    size={25}
-                    className='landing-page-icon me-4'
-                    title='Logout'
-                    onClick={logout} />
-                </div>
-            </div>
+            {isLoggedIn ? (
+                <>
+                    <Navbar />
 
-            
-            <Form className="container p-5" onSubmit={handleSubmit}>
-                <h3 className="text-center mb-4">
-                    My Profile
-                </h3>
-                <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Email address</Form.Label>
-                    <Form.Control
-                        readOnly
-                        id="email"
-                        type="email"
-                        value={emailState}
-                        style={{color: "gray"}}
-                    />
-                </Form.Group>
-                <Form.Group className="mt-2 mb-4">
-                    <Form.Label>First name <span className="text-danger">*</span></Form.Label>
-                    <Form.Control
-                        required
-                        id="firstName"
-                        type="text"
-                        placeholder="John"
-                        value={firstName}
-                        maxLength={255}
-                        onChange={(event) => setFirstName(event.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Last name <span className="text-danger">*</span></Form.Label>
-                    <Form.Control
-                        required
-                        id="lastName"
-                        type="text"
-                        placeholder="Doe"
-                        value={lastName}
-                        maxLength={255}
-                        onChange={(event) => setLastName(event.target.value)}
-                    />
-                </Form.Group>
-                <Form.Group className="mt-2 mb-4">
-                    <Form.Label>uOttawa flex card number if applicable (Student number)</Form.Label>
-                    <Form.Control
-                        id="flexCard"
-                        type="number"
-                        placeholder="300193369"
-                        value={flexCard || ""}
-                        onChange={handleAndValidateFlexCard}
-                    />
-                    {!isFlexCardValid && <small className="text-danger">Flex card number should be 9 digits.</small>}
-                </Form.Group>
-                <div className="text-center">
-                    <Button className="uottawa-btn" type="submit">
-                        Update profile information
-                    </Button>
-                </div>
-                <br />
-                {isValidUpdate &&
-                    <Alert className="text-center" variant={registerStatusVariant}>{registerStatusMessage}</Alert>} 
-            </Form>
+                    
+                    <Form className="container p-5" onSubmit={handleSubmit}>
+                        <h3 className="text-center mb-4">
+                            My Profile
+                        </h3>
+                        <Form.Group className="mt-2 mb-4">
+                            <Form.Label>Email address</Form.Label>
+                            <Form.Control
+                                readOnly
+                                id="email"
+                                type="email"
+                                value={emailState}
+                                style={{color: "gray"}}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mt-2 mb-4">
+                            <Form.Label>First name <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                required
+                                id="firstName"
+                                type="text"
+                                placeholder="John"
+                                value={firstName}
+                                maxLength={255}
+                                onChange={(event) => setFirstName(event.target.value)}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mt-2 mb-4">
+                            <Form.Label>Last name <span className="text-danger">*</span></Form.Label>
+                            <Form.Control
+                                required
+                                id="lastName"
+                                type="text"
+                                placeholder="Doe"
+                                value={lastName}
+                                maxLength={255}
+                                onChange={(event) => setLastName(event.target.value)}
+                            />
+                        </Form.Group>
+                        <Form.Group className="mt-2 mb-4">
+                            <Form.Label>uOttawa flex card number if applicable (Student number)</Form.Label>
+                            <Form.Control
+                                id="flexCard"
+                                type="number"
+                                placeholder="300193369"
+                                value={flexCard || ""}
+                                onChange={handleAndValidateFlexCard}
+                            />
+                            {!isFlexCardValid && <small className="text-danger">Flex card number should be 9 digits.</small>}
+                        </Form.Group>
+                        <div className="text-center">
+                            <Button className="uottawa-btn" type="submit">
+                                Update profile information
+                            </Button>
+                        </div>
+                        <br />
+                        {isValidUpdate &&
+                            <Alert className="text-center" variant={registerStatusVariant}>{registerStatusMessage}</Alert>} 
+                    </Form>
+                </>
+            ) : (
+                <>
+                    <Modal size="lg" centered show={true} className='modal-style'>
+                        <Modal.Body>
+                        <h4>Error</h4>
+                        <p>
+                            You have not logged in yet. <Link to={'/'}>Click here to go to the login page.</Link>
+                        </p>
+                        </Modal.Body>
+                    </Modal>
+                </>
+            )}
         </>
+
     )
 }
 

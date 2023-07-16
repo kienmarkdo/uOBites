@@ -2,7 +2,6 @@ import React from 'react';
 import '../styles.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
 import StoreIcon from './components/StoreIcon';
 import BentoSushiLogo from "../images/bento_sushi_logo.png";
 import PremiereMoissonLogo from "../images/premiere_moisson_logo.png";
@@ -14,7 +13,8 @@ import SecondCupLogo from "../images/second_cup_logo.png";
 import ParamountLogo from "../images/paramount_logo.png";
 import JuiceBarLogo from "../images/juice_bar_logo.png";
 import Pizza800Logo from "../images/pizza_800_logo.png";
-import appLogo from "../images/app-logo.png"
+import appLogo from "../images/app_logo_white.png";
+import { PersonCircle, BoxArrowRight } from 'react-bootstrap-icons';
 
 // idk if there's a better way to do it, cause the import statements gets long as we continue adding all the stores
 // and u cannot add the path to an image directly in the code below
@@ -36,12 +36,32 @@ const LandingPage = () => {
     { storeName: "305 Juice bar (UCU)", imageSrc: JuiceBarLogo },
     { storeName: "Pizza 800 (STE)", imageSrc: Pizza800Logo }
   ]
+
+  const logout = () => {
+    navigate('/');
+  }
+
+  const viewProfile = () => {
+    navigate('/editProfile');
+  }
   
   return (
     <>
-      <div className='landing-header'>
-        <h1 style={{ fontSize: "45px" }}>uOBites</h1>
-        <img src={appLogo} alt="uOBites" />
+      <div className='landing-header'> 
+        <img src={appLogo} alt="uOBites" width={"2%"} />
+        <div>
+          <PersonCircle
+            size={25}
+            className='landing-page-icon'
+            title='View Profile'
+            onClick={viewProfile}
+          />
+          <BoxArrowRight
+            size={25}
+            className='landing-page-icon'
+            title='Logout'
+            onClick={logout} />
+        </div>
       </div>
       <div className='landing-body'>
         <h3>

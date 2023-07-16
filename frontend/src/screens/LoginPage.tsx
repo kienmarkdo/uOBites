@@ -1,9 +1,11 @@
 import React, { ChangeEvent, useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { InputGroup } from "react-bootstrap";
+import { Alert, InputGroup } from "react-bootstrap";
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
+import Modal from 'react-bootstrap/Modal';
 import { useNavigate } from 'react-router-dom';
+import axios from "axios";
 
 const LoginPage = () => {
 
@@ -12,34 +14,86 @@ const LoginPage = () => {
   const [email, setEmail] = useState<string>('');
   const [password, setPassword] = useState<string>('');
   const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
-  const [showPassword, setShowPassword] = useState<boolean>(false); //initially false, cannot see password
-  const [isValidAccount, setIsValidAccount] = useState<boolean>(false); //check if acc is valid or not
-  const [doesPasswordMatch, setDoesPasswordMatch] = useState<boolean>(true);
+  const [showPassword, setShowPassword] = useState<boolean>(false);
+  const [isValidAccount, setIsValidAccount] = useState<boolean>(false);
   
+  const [registerStatusMessage, setRegisterStatusMessage] = useState<string>(""); // to display success/failed status after clicking Create Account button
+  const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("primary");
+  
+  //modal portion
+  const [show, setShow] = useState(false);
+  const [isModalEmailValid, setIsModalEmailValid] = useState<boolean>(false);
+  const [modalEmail, setModalEmail] = useState<string>('');
+  const [modalSubmitted, setModalSubmitted] = useState(false);
+  const handleCloseModal = () => setShow(false);
+  const handleShowModal = () => setShow(true);
+
+  const handleAndValidateModalEmail = (event: ChangeEvent<HTMLInputElement>) => {
+        
+    const emailInput = event.target.value;
+    setModalEmail(emailInput);
+    
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    setIsModalEmailValid(emailRegex.test(emailInput));
+  }
+
+  const handleSubmitModal = () =>{
+    if (isModalEmailValid){
+      console.log("Sending email: ", modalEmail, " to admin");
+      setShow(false);
+      setModalSubmitted(true);
+    }
+  }
+  //end modal portion
+
   const handleAndValidateEmail = (event: ChangeEvent<HTMLInputElement>) => {
         
-    const emailInput = event.target.value; //to reflect changed email on the UI
+    const emailInput = event.target.value;
     setEmail(emailInput);
     
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    setIsEmailValid(emailRegex.test(emailInput)); //stores true in setIsEmailValid if the email is valid
-    //later will check if this is valid to allow login
+    setIsEmailValid(emailRegex.test(emailInput));
   }
 
   const handleAndValidatePassword = (event: ChangeEvent<HTMLInputElement>) => {
-    //TODO need to retrieve from db and compare
     setPassword(event.target.value)
-    setDoesPasswordMatch(true); 
   }
 
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault(); //prevent reload for custom handling
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
 
-    setIsValidAccount(isEmailValid && doesPasswordMatch);
+    setIsValidAccount(isEmailValid); 
 
-    if (isEmailValid && doesPasswordMatch){
-      console.log("Logged in")
-      //TODO redirect to next page
+    if (isEmailValid){
+      console.log("Logging in...")
+
+      const formData = {
+        email: email,
+        password: password,
+      }
+
+      try{
+        const response = await axios.post("/login_user", formData);
+        console.log(response.data);
+
+        //Handle response and set status
+        if (response.data.message === "Login successful"){
+          setRegisterStatusMessage(response.data.message);
+          setRegisterStatusVariant("success");
+          navigate('/home');
+          setIsValidAccount(true);
+
+        }else if (response.data.message === "Wrong password or email entered"){
+          setRegisterStatusMessage(response.data.message);
+          setRegisterStatusVariant("danger");
+        }
+
+      }catch(error){
+        console.error("Error:", error);
+        setRegisterStatusMessage("ERROR: Unexpected Error. Please refresh the page and try again.");
+        setRegisterStatusVariant("danger");
+        setIsValidAccount(false);
+      }
     }
   }
 
@@ -62,10 +116,10 @@ const LoginPage = () => {
             required
             id="email"
             type="email"
-            placeholder="example@gmail.com"
+            placeholder="name@example.com"
             value={email}
             style={{width: "40%"}}
-            onChange={handleAndValidateEmail} //dynamically update email when changed on form
+            onChange={handleAndValidateEmail}
           />
           {/* If email is not valid, then the statement after && will be rendered: displaying warning message */}
           {!isEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
@@ -76,32 +130,66 @@ const LoginPage = () => {
             <Form.Control
               required
               id="password"
-              type={showPassword ? "text" : "password"} //if show pw is true, then we can see plaintext, otherwise its not visible
+              type={showPassword ? "text" : "password"}
               placeholder="Enter password"
               value={password}
-              onChange={handleAndValidatePassword} //call function whenever this field changes
+              onChange={handleAndValidatePassword}
             />
             <Button
               variant="outline-secondary"
               className="password-icon-container">
-              {/*Render the eye icon based on the showPassword variable, also sets the showPassword variable
-                depending on toggling the eye icon*/}
               {showPassword ?
                 <EyeFill color="grey" onClick={() => setShowPassword(!showPassword)} /> :
                 <EyeSlashFill color="grey" onClick={() => setShowPassword(!showPassword)} />}
             </Button>
           </InputGroup>
-          {/*make sure password match otherwise output msg*/}
-          {!doesPasswordMatch && <small className="text-danger">Passwords do not match</small>}
+          <div className="text-center">
+            <h6 className="register-link mt-3" onClick={handleShowModal}>Forgot Password?</h6>
+          </div>
         </Form.Group>
+
+        {/* For forget password modal popup */}
+        <Modal className="modal-style" show={show} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+          <Modal.Title>Forgot Password?</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form>
+            <Form.Group className="mt-2 mb-4 form-field">
+              <Form.Label>Please enter your email address for further assistance, an administrator will contact you in 1-3 business days.
+              </Form.Label>
+              <Form.Control
+                required
+                id="modalEmail"
+                type="email"
+                placeholder="name@example.com"
+                value={modalEmail}
+                autoFocus
+                onChange={handleAndValidateModalEmail}
+              />
+              {!isModalEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
+               
+            </Form.Group>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleCloseModal}>
+            Close
+          </Button>
+          <Button className="uottawa-modal-btn" variant="primary" onClick={handleSubmitModal}>
+            Submit
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
         <div className="text-center">
-          <Button className="uottawa-btn" type="submit" onClick={navigateToLandingPage}>
+          <Button className="uottawa-btn" type="submit">
             Log in
           </Button>
           <h6 className="register-link mt-3" onClick={navigateToRegistrationPage}>Don't have an account? Register here</h6>
         </div>
-        {/* if isValidAccount is true, render the h3 as logged in*/}
-        {isValidAccount && <h3>Successfully logged in!</h3>}
+        {isValidAccount && <Alert variant={registerStatusVariant}>{registerStatusMessage}</Alert>} 
+        {modalSubmitted && <Alert variant={"success"}>{"Email sent to administrator successfully!"}</Alert>}
       </Form>
     </>
   );

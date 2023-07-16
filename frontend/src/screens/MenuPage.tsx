@@ -30,10 +30,10 @@ export default function MenuPage() {
             <h2>Information</h2>
             <br />
             {OutletInfoJson.map((outlet) => {
-                if (outlet.foodOutletId === info.outletId) {
+                if (outlet.id === info.outletId) {
                   return (
                     <>
-                    <p><strong>Location: </strong>{outlet.Location}</p>
+                    <p><strong>Location: </strong>{outlet.location}</p>
                     <p><strong>Hours: </strong></p>
                     <ul>
                       {Object.entries(outlet.hoursOfOperation).map(([day, hours]) => (

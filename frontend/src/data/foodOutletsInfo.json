@@ -1,7 +1,7 @@
 [{
-    "foodOutletId": 1,
+    "id": 1,
     "name": "Bento Sushi (UCU)",
-    "Location": "85 University Private, Ottawa, ON K1N 9A7 (University Centre, level 0)",
+    "location": "85 University Private, Ottawa, ON K1N 9A7 (University Centre, level 0)",
     "hoursOfOperation": {
         "Monday - Friday": "7:30am - 5:00pm",
         "Saturday - Sunday": "Closed"
@@ -9,9 +9,9 @@
     "exception:": "CLOSED FOR SUMMER" 
 },
 {
-    "foodOutletId": 2,
+    "id": 2,
     "name": "Première Moisson (FSS)",
-    "Location": "120 University Private, Ottawa, ON K1N 6N5 (FSS, level 1)",
+    "location": "120 University Private, Ottawa, ON K1N 6N5 (FSS, level 1)",
     "hoursOfOperation": {
         "Monday - Friday": "8:00am - 3:00pm",
         "Saturday - Sunday": "Closed"
@@ -19,9 +19,9 @@
     "exception:": "CLOSED ON PUBLIC HOLIDAYS"
 },
 {
-    "foodOutletId": 3,
+    "id": 3,
     "name": "Tim Hortons (CRX)",
-    "Location": "UCU - Learning Crossroads (100 Louis-Pasteur Private)",
+    "location": "UCU - Learning Crossroads (100 Louis-Pasteur Private)",
     "hoursOfOperation": {
         "Monday - Friday": "7:30am - 7:30pm",
         "Saturday - Sunday": "Closed"
@@ -29,9 +29,9 @@
     "exception:": "CLOSED FOR SUMMER"
 },
 {
-    "foodOutletId": 4,
+    "id": 4,
     "name": "Tim Hortons (SITE)",
-    "Location": "STE - SITE, level 1 (800 King Edward Ave)",
+    "location": "STE - SITE, level 1 (800 King Edward Ave)",
     "hoursOfOperation": {
         "Monday - Friday": "7:30am - 5:00pm",
         "Saturday - Sunday": "Closed"
@@ -39,9 +39,9 @@
     "exception:": "CLOSED FOR SUMMER"
 },
 {
-    "foodOutletId": 5,
-    "name": "Bac à frites (Parking lot K)",
-    "Location": "56 University Private, Ottawa, ON K1N 6N5, (Parking lot K)",
+    "id": 5,
+    "name": "Le Bac à frites (Parking lot K)",
+    "location": "56 University Private, Ottawa, ON K1N 6N5, (Parking lot K)",
     "hoursOfOperation": {
         "Monday - Thursday": "11:00am - 7:00pm",
         "Friday": "11:00am - 6:00pm",
@@ -50,9 +50,9 @@
     "exception:": "CLOSED ON PUBLIC HOLIDAYS"
 },
 {
-    "foodOutletId": 6,
+    "id": 6,
     "name": "Starbucks (DMS)",
-    "Location": "Laurier Ave E &, Nicholas St, Ottawa, ON K1N 6N5 (Desmarais, level 1)",
+    "location": "Laurier Ave E &, Nicholas St, Ottawa, ON K1N 6N5 (Desmarais, level 1)",
     "hoursOfOperation": {
         "Monday - Friday": "7:30am - 3:00pm",
         "Saturday - Sunday": "Closed"
@@ -60,9 +60,9 @@
     "exception:": "CLOSED FOR SUMMER"
 },
 {
-    "foodOutletId": 7,
+    "id": 7,
     "name": "Flour Kitchen",
-    "Location": "25 University Private, Ottawa, ON K1N 7K4, (Corner of University Private and Copernicus)",
+    "location": "25 University Private, Ottawa, ON K1N 7K4, (Corner of University Private and Copernicus)",
     "hoursOfOperation": {
         "Monday - Friday": "9:00am - 5:00pm",
         "Saturday - Sunday": "Closed"
@@ -70,17 +70,9 @@
     "exception:": "CLOSED ON PUBLIC HOLIDAYS"
 },
 {
-    "foodOutletId": 8,
-    "name": "Second Cup (HSY)",
-    "Location": "HSY - Hyman-Soloway Residences, level 1 (Hyman Soloway, 157 Laurier Ave)",
-    "hoursOfOperation": {
-        "Monday - Sunday": "7:00am - 8:00pm"
-    }
-},
-{
-    "foodOutletId": 9,
+    "id": 8,
     "name": "Paramount Lebanese Kitchen (CRX)",
-    "Location": "100 Louis-Pasteur Private, Ottawa, ON K1N 9N3, Learning Crossroads (CRX)",
+    "location": "100 Louis-Pasteur Private, Ottawa, ON K1N 9N3, Learning Crossroads (CRX)",
     "hoursOfOperation": {
         "Monday - Friday": "11:00am - 6:00pm",
         "Saturday - Sunday": "Closed"
@@ -88,9 +80,9 @@
     "exception:": "CLOSED FOR SUMMER"
 },
 {
-    "foodOutletId": 10,
+    "id": 9,
     "name": "305 Juice bar (UCU)",
-    "Location": "University Centre, level 1",
+    "location": "University Centre, level 1",
     "hoursOfOperation": {
         "Monday - Thursday": "8:30am - 6:00pm",
         "Friday": "8:30am - 5:00pm",
@@ -99,9 +91,9 @@
     "exception:": "CLOSED FOR SUMMER"
 },
 {
-    "foodOutletId": 11,
+    "id": 10,
     "name": "Pizza 800 (STE)",
-    "Location": "STE - SITE, room 1040  800 King Edward Ave",
+    "location": "STE - SITE, room 1040  800 King Edward Ave",
     "hoursOfOperation": {
         "Monday - Friday": "11:00am - 7:00pm",
         "Saturday - Sunday": "Closed"

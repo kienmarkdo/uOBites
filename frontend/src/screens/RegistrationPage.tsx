@@ -67,8 +67,7 @@ const RegistrationPage = () => {
 
         setIsValidAccount(isEmailValid && passwordIsValid && isFlexCardValid);
 
-        if (isEmailValid && passwordIsValid) {
-            console.log("Creating account in DB...")
+        if (isEmailValid && passwordIsValid && isFlexCardValid) {
             const formData = {
                 email: email,
                 password: password2,
@@ -79,8 +78,7 @@ const RegistrationPage = () => {
 
             try {
                 const response = await axios.post("/register_user", formData);
-                console.log(response.data);
-
+                
                 // Handle the response
                 if (response.data.message === "Username already exists") {
                     setRegisterStatusMessage(response.data.message);

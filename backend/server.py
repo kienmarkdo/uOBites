@@ -82,6 +82,7 @@ def login_user():
     c1.execute(query, values)
 
     entry = c1.fetchone()
+
     c1.close()
     conn.close()
 
@@ -140,16 +141,16 @@ def check_user_exists():
 @app.route("/get_user_info", methods=["GET"])
 def get_user_info():
     """
-    API endpoint that fetches a user's details given their username
-    Can also be used to check if a username already exists in the database or not
-    username needs to be passed as a parameter
+    API endpoint that fetches a user's details given their email
+    Can also be used to check if an email already exists in the database or not
+    email needs to be passed as a parameter
     """
 
     conn = connect_to_database()
     cur = conn.cursor()
 
-    username = request.args.get("email")
-    cur.execute("SELECT * FROM user_account WHERE email = %s", (username,))
+    email = request.args.get("email")
+    cur.execute("SELECT * FROM user_account WHERE email = %s", (email,))
     user = cur.fetchone()
 
     cur.close()
@@ -167,6 +168,41 @@ def get_user_info():
         return jsonify(user_info)
     else:
         return jsonify({'message': 'User not found'})
+
+@app.route("/update_user_info", methods=["PUT"])
+def update_user_info():
+    """
+    API endpint that updates database entry for a user
+    given first name, last name and flex card
+    for edit profile
+    """
+
+    conn = connect_to_database()
+    c1 = conn.cursor()
+
+    data = request.get_json()
+    email = data["email"]
+    firstName = data["first_name"]
+    lastName = data["last_name"]
+    flex_card = data["flex_card"]
+
+    query = ''' 
+    UPDATE user_account
+    SET first_name = %s,
+    last_name = %s,
+    flex_card = %s
+    where email = %s
+    '''
+    
+    values = (firstName, lastName, flex_card, email)
+    c1.execute(query, values)
+
+    conn.commit()
+    c1.close()
+    conn.close()
+
+    return jsonify({
+        'message':'Successfully updated profile information'})
 
 
 if __name__ == "__main__":

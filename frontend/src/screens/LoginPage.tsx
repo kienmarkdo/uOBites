@@ -73,8 +73,6 @@ const LoginPage = () => {
     setIsValidAccount(isEmailValid); 
 
     if (isEmailValid){
-      console.log("Logging in...")
-
       const formData = {
         email: email,
         password: password,
@@ -82,7 +80,6 @@ const LoginPage = () => {
 
       try {
         const response = await axios.post("/login_user", formData);
-        console.log(response.data);
 
         //Handle response and set status
         if (response.data.message === "Login successful"){
@@ -91,7 +88,8 @@ const LoginPage = () => {
           navigateToLandingPage();
           setIsValidAccount(true);
 
-        }else if (response.data.message === "Wrong password or email entered"){
+        }
+        else if (response.data.message === "Wrong password or email entered") {
           setLoginStatusMessage(response.data.message);
           setLoginStatusVariant("danger");
         }

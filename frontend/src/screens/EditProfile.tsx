@@ -13,7 +13,7 @@ const EditProfile = () => {
 
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
-    const [email, setEmail] = useState<string>("");
+    const [emailState, setEmailState] = useState<string>("");
     const [flexCard, setFlexCard] = useState<number | null>(null);
     const [isFlexCardValid, setIsFlexCardValid] = useState<boolean>(true); // true cause it can be null
     const [isValidUpdate, setIsValidUpdate] = useState<boolean>(false);
@@ -22,7 +22,9 @@ const EditProfile = () => {
     const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("primary");
 
     const location = useLocation();
-    const {email: emailprop} = location.state || {};
+    const {state: email} = location.state || {};
+
+    alert(email)
 
     const navigate = useNavigate();
 
@@ -48,7 +50,7 @@ const EditProfile = () => {
         if (isFlexCardValid){
             console.log("Updating information in DB...")
             const formData = {
-                email: email,
+                email: emailState,
                 first_name: firstName,
                 last_name: lastName,
                 flex_card: flexCard,
@@ -82,14 +84,14 @@ const EditProfile = () => {
             try{
                 const response = await axios.get('/get_user_info', {
                     params:{
-                        email: emailprop
+                        email: email
                     }
                 });
 
                 //set form
                 setFirstName(response.data["first_name"]);
                 setLastName(response.data["last_name"]);
-                setEmail(response.data["email"]);
+                setEmailState(response.data["email"]);
                 setFlexCard(response.data["flex_card"]);
                 
             }
@@ -129,7 +131,7 @@ const EditProfile = () => {
                         readOnly
                         id="email"
                         type="email"
-                        value={email}
+                        value={emailState}
                         style={{color: "gray"}}
                     />
                 </Form.Group>

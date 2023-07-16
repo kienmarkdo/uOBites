@@ -56,7 +56,6 @@ const EditProfile = () => {
             
             try{
                 const response = await axios.put("/update_user_info", formData);
-                console.log(response.data);
              
                 setRegisterStatusMessage(response.data.message);
                 setRegisterStatusVariant("success");

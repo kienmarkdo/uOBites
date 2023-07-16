@@ -13,6 +13,30 @@
             "Spicy California Roll": {
                 "price": 8.60,
                 "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1129992831453372576/Screenshot_2023-07-16_at_00.27.59.png"
+            },
+            "Spicy California Crunch Roll": {
+                "price": 10.35,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130132623335882833/Screenshot_2023-07-16_at_09.43.29.png"
+            },
+            "Spicy Salmon Roll": {
+                "price": 11.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130133062886371338/Screenshot_2023-07-16_at_09.45.15.png"
+            },
+            "Vegetable California Roll": {
+                "price": 8.60,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130133630086287491/Screenshot_2023-07-16_at_09.47.30.png"
+            },
+            "Salmon Avocado Roll": {
+                "price": 11.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130133962711375882/Screenshot_2023-07-16_at_09.48.50.png"
+            },
+            "Tuna Avocado Roll": {
+                "price": 11.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130134043816644638/Screenshot_2023-07-16_at_09.49.09.png"
+            },
+            "California Samurai Combo": {
+                "price": 10.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130134174892830861/Screenshot_2023-07-16_at_09.49.39.png"
             }
         },
         "Poke Bowls": {
@@ -27,6 +51,181 @@
             "Tuna Poke Bowl": {
                 "price": 15.95,
                 "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1129997960252489809/Screenshot_2023-07-16_at_00.48.24.png"
+            }
+        },
+        "Hot Food": {
+            "Bento Boxes": {
+                "price": 13.80,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130135299645767812/Screenshot_2023-07-16_at_09.54.08.png"
+            },
+            "Donburi": {
+                "price": 10.90,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130135365680902234/Screenshot_2023-07-16_at_09.54.25.png"
+            },
+            "Ramen": {
+                "price": 13.80,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130135441639739453/Screenshot_2023-07-16_at_09.54.42.png"
+            }
+        },
+        "Sides": {
+            "Pork Dumplings": {
+                "price": 6.30, 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130135507104440340/Screenshot_2023-07-16_at_09.54.58.png"
+            },
+            "Tempura Shrimp": {
+                "price": 6.30,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130135567397556234/Screenshot_2023-07-16_at_09.55.13.png"
+            },
+            "Seaweed Salad": {
+                "price": 6.30,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130135630144360511/Screenshot_2023-07-16_at_09.55.27.png"
+            }
+        }
+    }
+},
+{
+    "foodOutletId": 2,
+    "menu": {
+        
+    }
+},
+{
+    "foodOutletId": 3,
+    "menu": {
+        "Hot Beverages & Coffee": {
+            "Brewed Coffee": {
+                "price": 1.83,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130155362687918110/Screenshot_2023-07-16_at_11.13.52.png"
+            },
+            "Dark Roasted": {
+                "price": 1.83,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130159014731317269/Screenshot_2023-07-16_at_11.28.23.png"
+            },
+            "Latte": {
+                "price": 3.69,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130155216914890862/Screenshot_2023-07-16_at_11.13.18.png"
+            },
+            "Cappuccino": {
+                "price": 3.69,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130155149529206904/Screenshot_2023-07-16_at_11.13.00.png"
+            },
+            "Americano": {
+                "price": 2.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130155277325438986/Screenshot_2023-07-16_at_11.13.30.png"
+            },
+            "Specialty Tea": {
+                "price": 1.89,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130155424801357948/Screenshot_2023-07-16_at_11.14.07.png"
+            },
+            "Hot Chocolate": {
+                "price": 1.89,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130155488055676978/Screenshot_2023-07-16_at_11.14.22.png"
+            },
+            "Espresso": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130155553549717514/Screenshot_2023-07-16_at_11.14.38.png"
+            }
+        },
+        "Cold Beverages": {
+            "Iced Coffee": {
+                "price": 2.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130158259806928926/Screenshot_2023-07-16_at_11.25.22.png"
+            },
+            "Roasted Hazelnut Cold Brew with Espresso Cold Foam": {
+                "price": 3.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130158340920582284/Screenshot_2023-07-16_at_11.25.42.png"
+            }
+        },
+        "Donuts & Timbits": {
+            "Strawberry Swirl Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143145271762974/Screenshot_2023-07-16_at_10.25.16.png"
+            },
+            "Apple Fritter Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143268903067698/Screenshot_2023-07-16_at_10.25.49.png"
+            },
+            "Boston Cream Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143352420061245/Screenshot_2023-07-16_at_10.26.09.png"
+            },
+            "Chocolate Dip Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143407596109844/Screenshot_2023-07-16_at_10.26.22.png"
+            },
+            "Vanilla Dip Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130145861960208464/Screenshot_2023-07-16_at_10.36.06.png"
+            },
+            "Honey Cruller Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143461245472871/Screenshot_2023-07-16_at_10.26.35.png"
+            },
+            "Honey Dip Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143500420259890/Screenshot_2023-07-16_at_10.26.44.png"
+            },
+            "Chocolate Glazed Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143590794932274/Screenshot_2023-07-16_at_10.27.06.png"
+            },
+            "Maple Dip Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143668267921428/Screenshot_2023-07-16_at_10.27.24.png"
+            },
+            "Canadian Maple Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143750014914652/Screenshot_2023-07-16_at_10.27.42.png"
+            },
+            "Old fashioned Plain Donut": {
+                "price": 1.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130147893026750525/Screenshot_2023-07-16_at_10.44.10.png"
+            },
+            "6 Assorted Donuts": {
+                "price": 7.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130142251935334440/Screenshot_2023-07-16_at_10.21.44.png"
+            }, 
+            "10 Assorted Timbits": {
+                "price": 2.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130142422144401428/Screenshot_2023-07-16_at_10.22.26.png"
+            },
+            "20 Assorted Timbits": {
+                "price": 4.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130142422144401428/Screenshot_2023-07-16_at_10.22.26.png"
+            }
+        },
+        "Baked Goods": {
+            "Chocolate Chip Muffin": {
+                "price": 1.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151264328622100/Screenshot_2023-07-16_at_10.57.32.png"
+            },
+            "Wild Blueberry Muffin": {
+                "price": 1.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151309857804308/Screenshot_2023-07-16_at_10.57.46.png"
+            },
+            "Raisin Bran Muffin": {
+                "price": 1.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151623382011935/Screenshot_2023-07-16_at_10.59.01.png"
+            },
+            "Carrot Cake with Walnut Muffin": {
+                "price": 2.29,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151356460695594/Screenshot_2023-07-16_at_10.57.58.png"
+            }, 
+            "Fruit Explosion Muffin": {
+                "price": 2.29,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151489176875078/Screenshot_2023-07-16_at_10.58.29.png"
+            }, 
+            "Whole Grain Pecan Banana Bread Muffin": {
+                "price": 1.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151398684762204/Screenshot_2023-07-16_at_10.58.07.png"
+            },
+            "Croissant": {
+                "price": 2.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151755469029487/Screenshot_2023-07-16_at_10.59.32.png"
+            },
+            "Chocolate Croissant": {
+                "price": 2.49,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151860599267378/Screenshot_2023-07-16_at_10.59.58.png"
             }
         }
     }

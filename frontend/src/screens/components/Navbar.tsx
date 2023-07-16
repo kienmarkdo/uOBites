@@ -16,6 +16,10 @@ export default function Navbar() {
         navigate('/');
     }
 
+    const navigateToHome = () => {
+        navigate('/home', { state: {email} });
+    }
+
     const location = useLocation();
     const { email } = location.state || {};
     const [name, setName] = useState<string>("");
@@ -51,7 +55,9 @@ export default function Navbar() {
             <>
                 <div className="landing-header">
                     <div className="d-flex align-items-center">
-                    <img src={appLogo} alt="uOBites" width={"5%"} />
+                    <img src={appLogo} alt="uOBites" width={"5%"} title="Home" 
+                    onClick={navigateToHome} style={{cursor: "pointer"}}
+                    />
                     <h4 className="ms-2 mt-2">uOBites - Hi {name}!</h4>
                     </div>
                     <div>

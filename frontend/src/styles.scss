@@ -60,7 +60,8 @@
 }
 
 .store-icon-container {
-  margin: 40px
+  margin: 40px;
+  cursor: pointer;
 }
 
 .store-icon-img {
@@ -82,9 +83,9 @@
 }
 
 .password-icon-container {
-    border-color: #DBDADA !important;
-    border-left: none !important;
-    background-color: white !important;
+  border-color: #DBDADA !important;
+  border-left: none !important;
+  background-color: white !important;
 }
 
 .form-field {
@@ -103,7 +104,6 @@
   cursor: pointer;
 }
 
-.modal-style .modal-content{
+.modal-style .modal-content {
   background-color: #282c34;
 }
-

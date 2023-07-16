@@ -22,9 +22,7 @@ const EditProfile = () => {
     const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("primary");
 
     const location = useLocation();
-    const {state: email} = location.state || {};
-
-    alert(email)
+    const { email } = location.state || {};
 
     const navigate = useNavigate();
 

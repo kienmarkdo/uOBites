@@ -10,7 +10,7 @@ export default function Navbar() {
     const navigate = useNavigate();
 
     const viewProfile = () => {
-      navigate("/editProfile", {state:email});
+      navigate("/editProfile", {state:{email}});
     };
 
     const logout = () => {

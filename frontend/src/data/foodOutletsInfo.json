@@ -71,14 +71,6 @@
 },
 {
     "id": 8,
-    "name": "Second Cup (HSY)",
-    "location": "HSY - Hyman-Soloway Residences, level 1 (Hyman Soloway, 157 Laurier Ave)",
-    "hoursOfOperation": {
-        "Monday - Sunday": "7:00am - 8:00pm"
-    }
-},
-{
-    "id": 9,
     "name": "Paramount Lebanese Kitchen (CRX)",
     "location": "100 Louis-Pasteur Private, Ottawa, ON K1N 9N3, Learning Crossroads (CRX)",
     "hoursOfOperation": {
@@ -88,7 +80,7 @@
     "exception:": "CLOSED FOR SUMMER"
 },
 {
-    "id": 10,
+    "id": 9,
     "name": "305 Juice bar (UCU)",
     "location": "University Centre, level 1",
     "hoursOfOperation": {
@@ -99,7 +91,7 @@
     "exception:": "CLOSED FOR SUMMER"
 },
 {
-    "id": 11,
+    "id": 10,
     "name": "Pizza 800 (STE)",
     "location": "STE - SITE, room 1040  800 King Edward Ave",
     "hoursOfOperation": {

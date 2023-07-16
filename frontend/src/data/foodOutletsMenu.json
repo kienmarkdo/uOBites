@@ -745,6 +745,34 @@
             "Zha Jiang Noodles": {
                 "price": 11.00,
                 "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130224053681127475/Screenshot_2023-07-16_at_15.46.49.png"
+            },
+            "Squash Congee": {
+                "price": 3.75, 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130224123705032774/Screenshot_2023-07-16_at_15.47.06.png"
+            },
+            "Egg Sausage Lettuce Wrap": {
+                "price": 7.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130224184946073620/Screenshot_2023-07-16_at_15.47.21.png"
+            },
+            "Tea Leaf Egg": {
+                "price": 1.75,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130224237685260390/Screenshot_2023-07-16_at_15.47.33.png"
+            }
+        }, 
+        "Drinks": {
+            "Pop (Can)": {
+                "price": 1.75,
+                "image": ""
+            }
+        }
+    }
+},
+{
+    "id": 8,
+    "menu": {
+        "Specialties": {
+            "Classic Poutine": {
+                
             }
         }
     }

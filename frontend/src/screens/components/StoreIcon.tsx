@@ -1,16 +1,32 @@
 import React from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 interface StoreIconProps {
-    storeName: string;
+    outletId: number;
+    outletName: string;
     imageSrc: string;
+    email: string;
 }
 
-const StoreIcon: React.FC<StoreIconProps> = ({storeName, imageSrc}) => {
+const StoreIcon: React.FC<StoreIconProps> = ({outletId, outletName, imageSrc, email}) => {
+    const navigate = useNavigate();
+
+    const handleOutletClick = () => {
+        const info = {
+            email: email,
+            outletId: outletId,
+            outletName: outletName,
+        };
+        navigate(`outletMenu/${outletId}`, {state: info})
+    }
+
     return (
-        <div className="store-icon-container">
-            <img src={imageSrc} alt={storeName} className="store-icon-img"/>
-            <h6>{storeName}</h6>
-        </div>
+        // <Link to={`outletMenu/${outletId}`} style={{ color: '#FFFFFF', textDecoration: 'none'}} >
+            <div className="store-icon-container" onClick={handleOutletClick}>
+                <img id={outletId.toString()} src={imageSrc} alt={outletName} className="store-icon-img"/>
+                <h6>{outletName}</h6>
+            </div>
+        // </Link>
     )
 }
 

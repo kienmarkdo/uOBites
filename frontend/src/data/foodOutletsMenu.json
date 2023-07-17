@@ -843,75 +843,75 @@
        "Signature Pizzas (11 inch)":{
             "Margherita":{
                 "price": 12.75,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130291158845755453/margherita-pizza-featured-image-square-1.png"
             },
-            "Pomodoro":{
-                "price": 12.75,
-                "image": "" 
+            "Funghi":{
+                "price": 13.42,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130291632881795112/i106951-pizza-ai-funghi-forestiere.png" 
             },
             "Quattro Fromaggi":{
                 "price": 14.75,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130292557742620672/image.png"
             },
             "Hawaiian":{
                 "price": 13.25,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130292349424128040/hawaiian-pizza-16-1200.png" 
             }
         },
         "Pastas":{
             "Pasta con Salsicca":{
                 "price": 13.50,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130292949478027294/image.png"
             },
             "Pasta con Pesto":{
                 "price": 13.50,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130293361857810472/Pasta-al-pesto.png" 
             },
             "Spaghetti and Meatballs":{
                 "price": 17.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130293581085679616/image.png"
             }
         },
         "Sandwiches":{
             "Formaggio":{
                 "price": 10.00,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130294305278414888/image.png" 
             },
             "Ortaggio":{
                 "price": 12.00,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130294832049434754/image.png" 
             },
             "Three Little Pigs":{
                 "price": 11.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130295243795865692/image.png"
             }
         },
         "Desserts":{
             "Chocolate Banana Turnover":{
                 "price": 9.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130295499845546025/image.png"
             },
             "Bowl of Gelato":{
                 "price": 7.00,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130295649246646352/image.png" 
             }
         },
         "Beverages": {
             "Diet Coke":{
                 "price": 3.00,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130295863412002877/56946.png" 
             },
             "Ginger Ale":{
                 "price": 3.00,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130295970559688744/CanadaDry.png" 
             },
             "Iced Tea":{
                 "price": 3.00,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130296086469288076/imageService.png" 
             },
             "Lemonade":{
                 "price": 3.00,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130296457610661979/keto-ginger-lemonade-3-1.png" 
             },
             "Acqua Panna":{
                 "price": 3.00,
@@ -921,39 +921,12 @@
         "Specials":{
             "Vegan Salsiccia":{
                 "price": 14.50,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130296806656450610/image.png" 
             },
             "Vegan Pasta Primavera":{
                 "price": 13.50,
-                "image": "" 
-            }
-        },
-        "Beer and Wine":{
-            "Miller light":{
-                "price": 3.00,
-                "image": "" 
-            },
-            "Yuengling Lager":{
-                "price": 3.00,
-                "image": "" 
-            },
-            "Stella Artois":{
-                "price": 4.00,
-                "image": ""
-            },
-            "Peroni":{
-                "price": 4.00,
-                "image": "" 
-            },
-            "Framboise":{
-                "price": 7.50,
-                "image": "" 
-            },
-            "Bell's Two Hearted (16oz can)":{
-                "price": 5.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130296974311174295/image.png" 
             }
         }
-
     }
 }]

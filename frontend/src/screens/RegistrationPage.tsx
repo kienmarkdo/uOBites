@@ -15,12 +15,13 @@ const RegistrationPage = () => {
     const [firstName, setFirstName] = useState<string>("");
     const [lastName, setLastName] = useState<string>("");
     const [email, setEmail] = useState<string>("");
-    const [flexCard, setFlexCard] = useState<number | undefined>();
+    const [flexCard, setFlexCard] = useState<number | null>(null);
     const [password1, setPassword1] = useState<string>("");
     const [password2, setPassword2] = useState<string>("");
     const [isEmailValid, setIsEmailValid] = useState<boolean>(true);
     const [passwordIsValid, setPasswordIsValid] = useState<boolean>(true);
     const [isValidAccount, setIsValidAccount] = useState<boolean>(false);
+    const [isFlexCardValid, setIsFlexCardValid] = useState<boolean>(true); // true cause it can be null
 
     const [showPassword1, setShowPassword1] = useState<boolean>(false);
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
@@ -49,13 +50,24 @@ const RegistrationPage = () => {
         }
     }
 
+    const handleAndValidateFlexCard = (event: ChangeEvent<HTMLInputElement>) => {
+        const flexCardInput = event.target.value;
+        const inputLength = String(flexCardInput).length
+
+        if (inputLength > 0 && inputLength !== 9) {
+            setIsFlexCardValid(false);
+        } else {
+            setIsFlexCardValid(true);
+        }
+        setFlexCard(parseInt(flexCardInput));
+    }
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        setIsValidAccount(isEmailValid && passwordIsValid);
+        setIsValidAccount(isEmailValid && passwordIsValid && isFlexCardValid);
 
-        if (isEmailValid && passwordIsValid) {
-            console.log("Creating account in DB...")
+        if (isEmailValid && passwordIsValid && isFlexCardValid) {
             const formData = {
                 email: email,
                 password: password2,
@@ -66,8 +78,7 @@ const RegistrationPage = () => {
 
             try {
                 const response = await axios.post("/register_user", formData);
-                console.log(response.data);
-
+                
                 // Handle the response
                 if (response.data.message === "Username already exists") {
                     setRegisterStatusMessage(response.data.message);
@@ -102,6 +113,7 @@ const RegistrationPage = () => {
                         type="text"
                         placeholder="John"
                         value={firstName}
+                        maxLength={255}
                         onChange={(event) => setFirstName(event.target.value)}
                     />
                 </Form.Group>
@@ -113,6 +125,7 @@ const RegistrationPage = () => {
                         type="text"
                         placeholder="Doe"
                         value={lastName}
+                        maxLength={255}
                         onChange={(event) => setLastName(event.target.value)}
                     />
                 </Form.Group>
@@ -124,6 +137,7 @@ const RegistrationPage = () => {
                         type="email"
                         placeholder="example@gmail.com"
                         value={email}
+                        maxLength={255}
                         onChange={handleAndValidateEmail}
                     />
                     {!isEmailValid && <small className="text-danger">Please enter a valid email address.</small>}
@@ -135,8 +149,9 @@ const RegistrationPage = () => {
                         type="number"
                         placeholder="300193369"
                         value={flexCard || ""}
-                        onChange={(event) => setFlexCard(parseInt(event.target.value))}
+                        onChange={handleAndValidateFlexCard}
                     />
+                    {!isFlexCardValid && <small className="text-danger">Flex card number should be 9 digits.</small>}
                 </Form.Group>
                 <Form.Group className="mt-2 mb-4">
                     <Form.Label>Password <span className="text-danger">*</span></Form.Label>
@@ -147,6 +162,8 @@ const RegistrationPage = () => {
                             type={showPassword1 ? "text" : "password"}
                             placeholder="Enter password"
                             value={password1}
+                            minLength={6}
+                            maxLength={255}
                             onChange={handleAndValidatePassword}
                         />
                         <Button
@@ -168,6 +185,8 @@ const RegistrationPage = () => {
                             type={showPassword2 ? "text" : "password"}
                             placeholder="Enter password"
                             value={password2}
+                            minLength={6}
+                            maxLength={255}
                             onChange={handleAndValidatePassword}
                         />
                         <Button

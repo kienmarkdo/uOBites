@@ -65,6 +65,33 @@ def register_user():
     return jsonify({'message': 'User registered successfully'})
     # return "Success"
 
+@app.route("/login_user", methods=["POST"])
+def login_user():
+    """
+    API endpoint that logs in a user
+    """
+    conn = connect_to_database()
+    c1 = conn.cursor()
+
+    data = request.get_json()
+    email = data["email"]
+    password = data["password"]
+
+    query = "SELECT * FROM user_account WHERE email = %s AND password = %s"
+    values = (email,password)
+    c1.execute(query, values)
+
+    entry = c1.fetchone()
+
+    c1.close()
+    conn.close()
+
+    # if email and password match an account
+    if entry:
+        return jsonify({'exists':True, 'message':'Login successful'})
+    else:
+        return jsonify({'exists':False, 'message':'Wrong password or email entered'})
+    
 
 @app.route("/get_all_users", methods=["GET"])
 def get_all_users():
@@ -111,18 +138,19 @@ def check_user_exists():
         return jsonify({'exists': False})
 
 
-@app.route("/get_user_info", methods=["POST"])
+@app.route("/get_user_info", methods=["GET"])
 def get_user_info():
     """
-    API endpoint that fetches a user's details given their username
-    Can also be used to check if a username already exists in the database or not
+    API endpoint that fetches a user's details given their email
+    Can also be used to check if an email already exists in the database or not
+    email needs to be passed as a parameter
     """
 
     conn = connect_to_database()
     cur = conn.cursor()
 
-    username = request.form.get("username")
-    cur.execute("SELECT * FROM user_account WHERE email = %s", (username,))
+    email = request.args.get("email")
+    cur.execute("SELECT * FROM user_account WHERE email = %s", (email,))
     user = cur.fetchone()
 
     cur.close()
@@ -140,6 +168,41 @@ def get_user_info():
         return jsonify(user_info)
     else:
         return jsonify({'message': 'User not found'})
+
+@app.route("/update_user_info", methods=["PUT"])
+def update_user_info():
+    """
+    API endpint that updates database entry for a user
+    given first name, last name and flex card
+    for edit profile
+    """
+
+    conn = connect_to_database()
+    c1 = conn.cursor()
+
+    data = request.get_json()
+    email = data["email"]
+    firstName = data["first_name"]
+    lastName = data["last_name"]
+    flex_card = data["flex_card"]
+
+    query = ''' 
+    UPDATE user_account
+    SET first_name = %s,
+    last_name = %s,
+    flex_card = %s
+    where email = %s
+    '''
+    
+    values = (firstName, lastName, flex_card, email)
+    c1.execute(query, values)
+
+    conn.commit()
+    c1.close()
+    conn.close()
+
+    return jsonify({
+        'message':'Successfully updated profile information'})
 
 
 if __name__ == "__main__":

@@ -10,16 +10,15 @@
 }
 
 .landing-header {
-  height: 10%;
-  padding-top: 10px;
-  padding-bottom: 10px;
+  height: 50px;
+  padding: 10px;
   color: white;
-  text-align: center;
   display: flex;
   align-items: center;
-  justify-content: center;
   flex-direction: row;
   background-color: #800000;
+  overflow: hidden;
+  justify-content: space-between,
 }
 
 .landing-body {
@@ -41,6 +40,11 @@
   border-color: #800000 !important;
 }
 
+.uottawa-modal-btn {
+  background-color: #800000 !important;
+  border-color: #800000 !important;
+}
+
 .uottawa-btn:hover {
   cursor: pointer !important;
   background-color: #970000 !important;
@@ -51,13 +55,13 @@
   flex-direction: row;
   flex-wrap: wrap;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 5px;
   justify-content: center;
 }
 
 .store-icon-container {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 40px;
+  cursor: pointer;
 }
 
 .store-icon-img {
@@ -79,9 +83,9 @@
 }
 
 .password-icon-container {
-    border-color: #DBDADA !important;
-    border-left: none !important;
-    background-color: white !important;
+  border-color: #DBDADA !important;
+  border-left: none !important;
+  background-color: white !important;
 }
 
 .form-field {
@@ -96,3 +100,10 @@
   cursor: pointer;
 }
 
+.landing-page-icon:hover {
+  cursor: pointer;
+}
+
+.modal-style .modal-content {
+  background-color: #282c34;
+}

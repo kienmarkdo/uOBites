@@ -4,11 +4,11 @@
         "Sushi": {
             "Dynamite Crunch Roll": {
                 "price": 12.65,
-                "image": "https://cdn.discordapp.com/attachments/1103746450065739906/1129988082406543410/Screenshot_2023-07-16_at_00.09.01.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130575680686538782/IMG_6583.png"
             },
             "Salmon Lovers Combo": {
                 "price": 16.10,
-                "image": "https://cdn.discordapp.com/attachments/1103746450065739906/1129989130273685504/Screenshot_2023-07-16_at_00.13.17.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130575685233164371/IMG_6584.png"
             },
             "Spicy California Roll": {
                 "price": 8.60,
@@ -248,11 +248,11 @@
         "Donuts & Timbits": {
             "Strawberry Swirl Donut": {
                 "price": 1.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143145271762974/Screenshot_2023-07-16_at_10.25.16.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597428215677039/Screenshot_2023-07-17_at_16.30.28.png"
             },
             "Apple Fritter Donut": {
                 "price": 1.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143268903067698/Screenshot_2023-07-16_at_10.25.49.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597473363173477/Screenshot_2023-07-17_at_16.30.39.png"
             },
             "Boston Cream Donut": {
                 "price": 1.49,
@@ -260,7 +260,7 @@
             },
             "Chocolate Dip Donut": {
                 "price": 1.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143407596109844/Screenshot_2023-07-16_at_10.26.22.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597551507263588/Screenshot_2023-07-17_at_16.30.56.png"
             },
             "Vanilla Dip Donut": {
                 "price": 1.49,
@@ -280,7 +280,7 @@
             },
             "Maple Dip Donut": {
                 "price": 1.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143668267921428/Screenshot_2023-07-16_at_10.27.24.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597676463952013/Screenshot_2023-07-17_at_16.31.27.png"
             },
             "Canadian Maple Donut": {
                 "price": 1.49,
@@ -288,7 +288,7 @@
             },
             "Old fashioned Plain Donut": {
                 "price": 1.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130147893026750525/Screenshot_2023-07-16_at_10.44.10.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597633476534312/Screenshot_2023-07-17_at_16.31.17.png"
             },
             "6 Assorted Donuts": {
                 "price": 7.99,
@@ -330,11 +330,11 @@
             },
             "Croissant": {
                 "price": 2.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151755469029487/Screenshot_2023-07-16_at_10.59.32.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597786287603733/Screenshot_2023-07-17_at_16.31.52.png"
             },
             "Chocolate Croissant": {
                 "price": 2.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130151860599267378/Screenshot_2023-07-16_at_10.59.58.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597841472077875/Screenshot_2023-07-17_at_16.32.07.png"
             }
         },
         "Meals": {
@@ -467,7 +467,7 @@
         "Donuts & Timbits": {
             "Strawberry Swirl Donut": {
                 "price": 1.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143145271762974/Screenshot_2023-07-16_at_10.25.16.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597428215677039/Screenshot_2023-07-17_at_16.30.28.png"
             },
             "Boston Cream Donut": {
                 "price": 1.49,
@@ -475,7 +475,7 @@
             },
             "Chocolate Dip Donut": {
                 "price": 1.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143407596109844/Screenshot_2023-07-16_at_10.26.22.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597551507263588/Screenshot_2023-07-17_at_16.30.56.png"
             },
             "Vanilla Dip Donut": {
                 "price": 1.49,
@@ -491,7 +491,7 @@
             },
             "Maple Dip Donut": {
                 "price": 1.49,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130143668267921428/Screenshot_2023-07-16_at_10.27.24.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597676463952013/Screenshot_2023-07-17_at_16.31.27.png"
             },
             "6 Assorted Donuts": {
                 "price": 7.99,
@@ -590,15 +590,15 @@
             },
             "Cheeseburger": {
                 "price": 8.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Chickenburger": {
                 "price": 7.5,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Veggieburger": {
                 "price": 7.5,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Hot Dog": {
                 "price": 3.00,
@@ -606,31 +606,33 @@
             },
             "Cheese Dog": {
                 "price": 3.50, 
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Veggie Dog": {
                 "price": 6.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Jumbo Dog": {
-                "price": 6.00
+                "price": 6.00,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Grilled Cheese sandwich": {
                 "price": 4.50,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "BLT": {
                 "price": 6.50,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Pogo": {
-                "price": 3.25
+                "price": 3.25,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             }
         },
         "Sides": {
             "Fries": {
                 "price": 6.50,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Poutine": {
                 "price": 8.00,
@@ -638,27 +640,27 @@
             },
             "Chicken fingers": {
                 "price": 8.50,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Pogo": {
                 "price": 3.25,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Onions rings": {
                 "price": 6.00, 
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Bratwurst Sausage": {
                 "price": 7.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             }, 
             "Italian Sausage": {
                 "price": 7.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Polish Sausage": {
                 "price": 7.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             }
         },
         "Combos": {
@@ -668,15 +670,15 @@
             },
             "Chickenburger Combo": {
                 "price": 14.50,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Veggieburger Combo": {
                 "price": 14.50,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Chicken Fingers Combo": {
                 "price": 15.50,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Hot Dog Combo": {
                 "price": 13.00,
@@ -684,7 +686,7 @@
             },
             "Veggie Dog Combo": {
                 "price": 13.00,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             }
         }
     }
@@ -847,7 +849,7 @@
         "Drinks": {
             "Pop (Can)": {
                 "price": 1.75,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             }
         }
     }
@@ -882,7 +884,7 @@
             },
             "Pita": {
                 "price": 0.99,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             }
         },
         "Salads": {
@@ -899,11 +901,11 @@
         "Sides": {
             "Rice": {
                 "price": 5.99,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Fries": {
                 "price": 6.99,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Hummus": {
                 "price": 6.88,
@@ -939,18 +941,19 @@
         "Cold Beverages": {
             "Coke (Can)": {
                 "price": 2.85,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Nestea (500ml)": {
                 "price": 3.99,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Bottled Juice": {
-                "price": 3.99
+                "price": 3.99,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             },
             "Bottled Water": {
                 "price": 2.85,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             }
         }
     }
@@ -989,7 +992,7 @@
         "Coffee": {
             "Coffee": {
                 "price": 2.30,
-                "image": ""
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png"
             }
         },
         "Protein Shakes": {
@@ -1024,7 +1027,7 @@
        "Appetizers and Salads":{
             "Garlic Bread":{
                 "price": 7.00,
-                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130265703199547492/110-1108904_garlic-bread-png-file-download-free-cheese-garlic.png"
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130601030896324679/Screenshot_2023-07-17_at_16.44.46.png"
             },
             "Caprese":{
                 "price": 13.00,
@@ -1114,7 +1117,7 @@
             },
             "Acqua Panna":{
                 "price": 3.00,
-                "image": "" 
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130591912768831549/nopicavail.png" 
             }
         },
         "Specials":{

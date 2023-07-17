@@ -4,5 +4,26 @@
 }
 
 .menu-container {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.info-container {
     padding: 2vh 15vw;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.menu-item {
+    // // display: flex;
+    // flex-direction: column;
+    // justify-content: center;
+    // align-items: center;
+    text-align: center;
+    margin: 20px;
 }

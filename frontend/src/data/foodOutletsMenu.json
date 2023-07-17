@@ -86,7 +86,92 @@
 {
     "id": 2,
     "menu": {
-        
+        "Baked Goods":{
+            "Raisin Danish":{
+                "price": 3.80,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130544184063955165/Screenshot_2023-07-17_at_12.58.50.png" 
+            },
+            "Praline-Chocolate Croissant":{
+                "price": 4.45,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130544503753801820/Screenshot_2023-07-17_at_13.00.10.png" 
+            },
+            "Chocolatine":{
+                "price": 3.15,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130544771086160004/Screenshot_2023-07-17_at_13.01.15.png" 
+            },
+            "Banana and Caramelized Pecans Muffin":{
+                "price": 3.15,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130545076804784288/Screenshot_2023-07-17_at_13.02.26.png" 
+            },
+            "Double Chocolate Muffin":{
+                "price": 3.15,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130545195939790868/Screenshot_2023-07-17_at_13.02.54.png" 
+            },
+            "Blueberry Muffin":{
+                "price": 3.15,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130545842890211348/Screenshot_2023-07-17_at_13.05.30.png" 
+            },
+            "Double Chocolate Cookie":{
+                "price": 2.45,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130545387158130818/Screenshot_2023-07-17_at_13.03.41.png" 
+            },
+            "Chocolate and Pecans Cookie":{
+                "price": 2.45,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130545614032216284/Screenshot_2023-07-17_at_13.04.36.png" 
+            },
+            "Dark Chocolate and Nut Brownie":{
+                "price": 4.80,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130545750447751168/Screenshot_2023-07-17_at_13.05.08.png" 
+            }
+        },
+        "Meals":{
+           "Greek Salad":{
+                "price": 4.80,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130546065813295124/Screenshot_2023-07-17_at_13.06.22.png" 
+           },
+           "Quiche Lorraine":{
+                "price": 6.35,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130546231706394714/Screenshot_2023-07-17_at_13.07.03.png" 
+           },
+           "Provencale Quiche":{
+                "price": 6.35,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130546350526832640/Screenshot_2023-07-17_at_13.07.31.png" 
+           },
+           "Eggs and Tomatoes Salad":{
+                "price": 4.80,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130546454667198626/Screenshot_2023-07-17_at_13.07.56.png" 
+           },
+           "Goat Cheese, Pesto and Parmesan Danish":{
+                "price": 7.20,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130546598154346496/Screenshot_2023-07-17_at_13.08.31.png" 
+           },
+           "Hummus and Grilled Vegetables Sandwich":{
+                "price": 8.85,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130546684099825744/Screenshot_2023-07-17_at_13.08.51.png" 
+           },
+           "Guacamole Chicken Sandwich with Tomato and Coriander":{
+                "price": 9.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130551881861709854/Screenshot_2023-07-17_at_13.28.52.png"
+           }
+        },
+        "Drinks":{
+            "Apple Juice":{
+                "price": 2.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130547801814728874/Screenshot_2023-07-17_at_13.13.16.png"
+            },
+            "Coffee":{
+                "price": 2.60,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130547666896551936/Screenshot_2023-07-17_at_13.12.44.png"
+            },
+            "Orange Juice":{
+                "price": 2.50,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130547891409268756/Screenshot_2023-07-17_at_13.13.38.png" 
+            },
+            "Water":{
+                "price": 1.95,
+                "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130548092526133338/Screenshot_2023-07-17_at_13.14.25.png"
+            }
+        }   
     }
 },
 {

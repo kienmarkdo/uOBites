@@ -54,14 +54,20 @@ Clone and navigate to the root of the repo. Instructions below are in bash termi
 
 
 ### Ngrok self-hosting
-Hosting the PostgreSQL database, Flask backend, and TypeScript frontend is too complicated. Cloud hosting solutions on AWS, Azure, Heroku etc. require payment and the setup is difficult. Given the short time we have for our project, we have decided to go with a fast and cheap "cloud" solution- Ngrok.
+Hosting the PostgreSQL database, Flask backend, and TypeScript frontend is too complicated. Cloud hosting solutions on AWS, Azure, Heroku etc. require payment and the setup is difficult. Given the short time we have for our project, we have decided to go with a fast and free "cloud" solution... Ngrok.
 
-When we host a website on a server (AWS, Heroku, etc.), all we are doing is borrowing someone else's computer for them to run our frontend, backend, database, the same way we have to do npm run start, python server.py etc. on localhost.
+When we host a website on a server (AWS, Heroku, etc.), all we are doing is borrowing someone else's computer for them to run our frontend, backend, database, the same way we have to do npm run start, python server.py etc. on localhost, and then telling them to leave their computer on 24/7. Instead of paying Amazon or Microsoft to get them to do that, Ngrok allows us to run our server on our own computer.
 
-Ngrok allows the develop to use their own computer as a server + gives a free URL to use.
+Ngrok allows the develop to use their own computer as a server, as well as gives a free URL to use.
 Anything the develop sees on localhost, ngrok will make it available to view on the internet.
 
 To get started:
+- Create an Ngrok account then go to this URL
+    - https://dashboard.ngrok.com/get-started/setup
+    - Scroll down to **2. Connect your account**
+    - Copy that command `ngrok config add-authtoken <YOUR_TOKEN>`
+    - Open Terminal in root of project, run that command.
+        - NOTE: you may need to run `./ngrok...` (with `./` in front of the command) instead of `ngrok`
 - Start the server and generate a URL for the uOBites app
     - Open the terminal in the root of the project
     - Type `./ngrok http 3000 --host-header="localhost:3000"`

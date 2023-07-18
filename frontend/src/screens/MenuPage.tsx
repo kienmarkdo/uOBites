@@ -92,32 +92,31 @@ const MenuPage = () => {
           <h1 className='menu-title'>{info.outletName}</h1>
           <section className='menu-container'>
             <div className='info-container'>
-              <h2>Information</h2>
-              <br />
                {OutletInfoJson.map((outlet) => {
                 if (outlet.id === info.outletId) {
                   return (
-                    <div className="container">
-                      <div className="row">
-                        <div className="col-md-7">
-                          <p><strong>Location: </strong>{outlet.location}</p>
-                          <p><strong>Hours: </strong></p>
-                          <ul>
-                            {Object.entries(outlet.hoursOfOperation).map(([day, hours]) => (
-                              <li key={day}>
-                                <strong>{day}</strong> : {hours}
-                              </li>
-                            ))}
-                          </ul>
-                          <p><strong>Exception: </strong>{outlet['exception:']}</p>
-                        </div>
-                        <div className="col-md-5 px-5">
-                          <img
-                            src={outlet.image}
-                            alt={outlet.name}
-                            width={"100%"}
-                          />
-                        </div>
+                    <div className="info-details-container">
+                      <div className="info-details-item">
+                        <h2>Information</h2>
+                        <br />
+                        <p><strong>Location: </strong>{outlet.location}</p>
+                        <p><strong>Hours: </strong></p>
+                        <ul>
+                          {Object.entries(outlet.hoursOfOperation).map(([day, hours]) => (
+                            <li key={day}>
+                              <strong>{day}</strong> : {hours}
+                            </li>
+                          ))}
+                        </ul>
+                        <p><strong>Exception: </strong>{outlet['exception:']}</p>
+                      </div>
+                      {/* <div className="info-details-item" style={{width: "5vw"}}></div> */}
+                      <div className="info-details-item">
+                        <img
+                          src={outlet.image}
+                          alt={outlet.name}
+                          width={"100%"}
+                        />
                       </div>
                     </div>
                   );
@@ -140,7 +139,7 @@ const MenuPage = () => {
             </div>
             <div className='d-flex align-items-center justify-content-center'>
               <InfoCircleFill className='me-2' size={20} />
-              <h6 className='mt-2'>Start adding to your cart by using the + and - button</h6>
+              <h6 className='mt-2'>Modify your Cart using the (+) and (-) buttons</h6>
             </div>
             <br />
               {OutletMenuJson.map((outlet) => {
@@ -148,7 +147,7 @@ const MenuPage = () => {
                   return Object.entries(outlet.menu).map(([category, items]) => (
                     <div key={category} className='mx-1 px-5'>
                       <h4 className='px-4'>{category}</h4>
-                      <div className='d-flex flex-wrap'>
+                      <div className='display-menu-items-container'>
                         {Object.entries(items).map(([foodItem, item]) => (
                           <div key={foodItem} className='text-center mx-4'>
                             <div className='d-flex align-items-end justify-content-center' style={{ width: 150, height: 70 }}>

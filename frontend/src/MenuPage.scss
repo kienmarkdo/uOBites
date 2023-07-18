@@ -9,7 +9,41 @@
 }
 
 .info-container {
-    padding: 2vh 15vw;
+    padding: 5vh 15vw;
+    // display: flex;
+    // justify-content: space-between;
+}
+
+.info-details-container {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+    }
+
+}
+
+.info-details-item {
+    // flex: auto;
+    min-width: 20vw;
+    max-width: 30vw;
+
+    @media (max-width: 768px) {
+        min-width: none;
+        max-width: none;
+    }
+}
+
+.display-menu-items-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+    }
 }
 
 .quantity-modify-btn:hover {

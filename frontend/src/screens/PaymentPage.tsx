@@ -4,10 +4,8 @@ import '../styles.scss';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Navbar from './components/Navbar'
 import Form from 'react-bootstrap/Form';
-import { Alert } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import { Modal } from 'react-bootstrap';
-import { subtract } from 'cypress/types/lodash';
 
 const PaymentPage = () => {
 
@@ -20,32 +18,21 @@ const PaymentPage = () => {
 
   //all the props passed from menu
   const location = useLocation();
-  const { email = "bob@bob.com" } = location.state || {}; // value is passed from the menu page
-  //TODO remove bob later when menu is implemented, pass email props to payment
-  //const {cart = {food1: [2,10], food2:[1,5]}} = location.state || {}; //value passed from menu
+  const {email} = location.state || {}; // value is passed from the menu page
+  const {cart} = location.state || {}; //value passed from menu
 
-  //todo get props instead
-  const [cart, setCart] = useState<{ [foodItem: string]: [quantity: number, price: number] }>({
-    food1: [2, 13.2],
-    food2: [1, 15.5],
-  });
-
-  const [itemCount, setItemCount] = useState<number | null>(null);
   const [subTotal, setSubTotal] = useState<number>(0); //total without tax
-  const [tax, setTax] = useState<number | null>(null); //13% of subtotal
-  const [orderTotal, setOrderTotal] = useState<number | null>(null); //113% of subtotal
+  const [tax, setTax] = useState<number | null>(0); //13% of subtotal
+  const [orderTotal, setOrderTotal] = useState<number | null>(0); //113% of subtotal
   
   const [cardNum, setCardNum] = useState<number | null>(null);
   const [cardCVC, setCardCVC] = useState<number | null>(null);
   const [useFlex, setUseFlex] = useState<boolean>(true); //false -> we want credit card form to appear
   const [isCardNumValid, setIsCardNumValid] = useState<boolean>(false);
   const [isSecurityNumValid, setIsSecurityNumValid] = useState<boolean>(false);
-  const [validPayment, isValidPayment] = useState<boolean>(false);
-  const [formSubmitted, setFormSubmitted] = useState<boolean>(false);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-  // TODO check if this works when connecting menu
   // check whether the user is logged in or not in order to display the correct content
   useEffect(() => {
     if (email) {
@@ -54,11 +41,15 @@ const PaymentPage = () => {
       //calculate total price
       calculateEstimatedTotal();
 
-      //calculate tax and orderTotal
-      setTax(Number((0.13 * subTotal).toFixed(2))); // 13% of subtotal with 2 decimal places
-      setOrderTotal(Number((1.13 * subTotal).toFixed(2))); // 113% of subtotal with 2 decimal places
+      // calculate tax and orderTotal
+      const calculatedTax = Number((0.13 * subTotal).toFixed(2));
+      const calculatedOrderTotal = Number((1.13 * subTotal).toFixed(2));
+
+      setTax(calculatedTax);
+      setOrderTotal(calculatedOrderTotal);
+
     }
-  }, [email]);
+  }, [email, subTotal]);
 
   const calculateEstimatedTotal = () => {
     let estimatedTotal: number = 0
@@ -67,7 +58,6 @@ const PaymentPage = () => {
       const [quantity, price] = cart[foodItem];
       return estimatedTotal += (quantity * price)
     })
-
     setSubTotal(estimatedTotal);
   }
 
@@ -102,15 +92,9 @@ const PaymentPage = () => {
     event.preventDefault();
    
     console.log("in handle pay ");
-    
-    setFormSubmitted(true);
-    isValidPayment(isCardNumValid && isSecurityNumValid);
 
     if (isCardNumValid && isSecurityNumValid){
       navigateToOrderStatus();
-      isValidPayment(true);
-    }else{
-      isValidPayment(false);
     }
     
   }
@@ -130,7 +114,7 @@ const PaymentPage = () => {
 
           <div className='container' style={{padding:0}}>
             <div className='row'>
-
+              
               {/* Payment info */}
               <div className='col-9' style={{paddingRight:100}}>
                 <h3>Payment Information</h3>
@@ -254,7 +238,7 @@ const PaymentPage = () => {
                     <div className="col-10">
                       <h6>Subtotal:</h6>
                       <h6>Estimated GST/HST:</h6>
-                      <h6>Order Total:</h6>
+                      <h6>Total:</h6>
                     </div>
                     <div className="col-2">
                       <h6>${subTotal.toFixed(2)} </h6>

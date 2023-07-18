@@ -4,7 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, useLocation } from 'react-router-dom';
 import { Modal } from 'react-bootstrap';
 import Navbar from './components/Navbar';
+import Button from 'react-bootstrap/Button';
 import OutletInfoJson from '../data/foodOutletsInfo.json';
+import { useNavigate } from 'react-router-dom';
 import { PlusLg, DashLg, InfoCircleFill, Cart4 } from 'react-bootstrap-icons';
 
 interface MenuItem {
@@ -20,6 +22,12 @@ interface MenuItem {
 }
 
 const MenuPage = () => {
+
+  const navigate = useNavigate();
+  const navigateToPayment = () => {
+    navigate('/home/payment', {state: {email:info.email, cart:cart}});
+  };
+
 
   const OutletMenuJson: MenuItem[] = require('../data/foodOutletsMenu.json');
 
@@ -76,6 +84,7 @@ const MenuPage = () => {
 
     return estimatedTotal
   }
+
 
   // check whether the user is logged in or not in order to display the correct content
   useEffect(() => {
@@ -210,6 +219,13 @@ const MenuPage = () => {
                   <h6 className='text-end'>
                     Estimated Subtotal: <span>${calculateEstimatedTotal().toFixed(2)}</span>
                   </h6>
+                  {Object.keys(cart).length !== 0 && (
+                    <Modal.Footer>
+                      <Button className="uottawa-modal-btn" variant="primary" onClick={navigateToPayment}>
+                        Proceed to Checkout
+                      </Button>
+                    </Modal.Footer>
+                  )}
                 </div>
               </div>         
             </Modal.Body>

@@ -129,9 +129,11 @@ const MenuPage = () => {
               <hr />
             </div>
             <div className='d-flex justify-content-between'>
-              <div></div>
-              <h2 className='text-center text-decoration-underline'>Menu</h2>
-              <div className='d-flex align-items-center view-cart-btn' onClick={handleShowModal}>
+              <div className='col-4'></div>
+              <div className='col-4'>
+                <h2 className='text-center text-decoration-underline'>Menu</h2>
+              </div>
+              <div className='col-4 d-flex align-items-center justify-content-end view-cart-btn' onClick={handleShowModal}>
                 <h6 className='mt-3 mx-2'>View Cart</h6>
                 <Cart4 size={30} />
               </div>

@@ -28,8 +28,8 @@ const PaymentPage = () => {
   const [cardNum, setCardNum] = useState<number | null>(null);
   const [cardCVC, setCardCVC] = useState<number | null>(null);
   const [useFlex, setUseFlex] = useState<boolean>(true); //false -> we want credit card form to appear
-  const [isCardNumValid, setIsCardNumValid] = useState<boolean>(false);
-  const [isSecurityNumValid, setIsSecurityNumValid] = useState<boolean>(false);
+  const [isCardNumValid, setIsCardNumValid] = useState<boolean>(true);
+  const [isSecurityNumValid, setIsSecurityNumValid] = useState<boolean>(true);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -90,8 +90,6 @@ const PaymentPage = () => {
   //validate navigate to next page
   const handlePay =  (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-   
-    console.log("in handle pay ");
 
     if (isCardNumValid && isSecurityNumValid){
       navigateToOrderStatus();
@@ -215,24 +213,20 @@ const PaymentPage = () => {
               {/* Order summary */}
               <div className='col-3'  style={{borderLeft: "2px solid grey", paddingLeft:30}}>
                 <h3>Order Summary</h3>
-                <div style={{padding : 10}}>
-                  {Object.keys(cart).length !== 0 ? (
-                    Object.keys(cart).map((foodItem) => {
-                      const [quantity, price] = cart[foodItem];
-                      return (
-                        <div className="row" key={foodItem}>
-                          <div className="col-10">
-                            <h6>x{quantity} {foodItem}</h6>
-                          </div>
-                          <div className="col-2">
-                            <h6>${(price*quantity).toFixed(2)} </h6>
-                          </div>
+                <div style={{padding : 10}}>          
+                  {Object.keys(cart).map((foodItem) => {
+                    const [quantity, price] = cart[foodItem];
+                    return (
+                      <div className="row" key={foodItem}>
+                        <div className="col-10">
+                          <h6>x{quantity} {foodItem}</h6>
                         </div>
-                      );
-                    })
-                  ) : (
-                    <h6>No items in the cart</h6>
-                 )}
+                        <div className="col-2">
+                          <h6>${(price*quantity).toFixed(2)} </h6>
+                        </div>
+                      </div>
+                    );
+                  })}
                  <hr></hr>
                   <div className="row" key={subTotal}>
                     <div className="col-10">
@@ -243,7 +237,7 @@ const PaymentPage = () => {
                     <div className="col-2">
                       <h6>${subTotal.toFixed(2)} </h6>
                       <h6>${tax?.toFixed(2)} </h6>
-                      <h6>${orderTotal}</h6>
+                      <h6>${orderTotal?.toFixed(2)}</h6>
                     </div>
                   </div>
 

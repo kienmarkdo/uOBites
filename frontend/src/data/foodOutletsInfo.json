@@ -6,7 +6,8 @@
         "Monday - Friday": "7:30am - 5:00pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED FOR SUMMER" 
+    "exception:": "CLOSED FOR SUMMER",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597433924124672/IMG_2300-2.png" 
 },
 {
     "id": 2,
@@ -16,7 +17,8 @@
         "Monday - Friday": "8:00am - 3:00pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED ON PUBLIC HOLIDAYS"
+    "exception:": "CLOSED ON PUBLIC HOLIDAYS",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597803069022318/IMG_0807-3.png"
 },
 {
     "id": 3,
@@ -26,7 +28,8 @@
         "Monday - Friday": "7:30am - 7:30pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED FOR SUMMER"
+    "exception:": "CLOSED FOR SUMMER",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130597944610000956/IMG_6656-2.png"
 },
 {
     "id": 4,
@@ -36,7 +39,8 @@
         "Monday - Friday": "7:30am - 5:00pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED FOR SUMMER"
+    "exception:": "CLOSED FOR SUMMER",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130598062453170348/Univ20of20Ottawa-658.png"
 },
 {
     "id": 5,
@@ -47,7 +51,8 @@
         "Friday": "11:00am - 6:00pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED ON PUBLIC HOLIDAYS"
+    "exception:": "CLOSED ON PUBLIC HOLIDAYS",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130598454943547563/295105987_410324871121980_3933098072766395007_n.png"
 },
 {
     "id": 6,
@@ -57,7 +62,8 @@
         "Monday - Friday": "7:30am - 3:00pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED FOR SUMMER"
+    "exception:": "CLOSED FOR SUMMER",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130598616826904718/Univ20of20Ottawa-720.png"
 },
 {
     "id": 7,
@@ -67,7 +73,8 @@
         "Monday - Friday": "9:00am - 5:00pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED ON PUBLIC HOLIDAYS"
+    "exception:": "CLOSED ON PUBLIC HOLIDAYS",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130598696292208660/IMG_0779.png"
 },
 {
     "id": 8,
@@ -77,7 +84,8 @@
         "Monday - Friday": "11:00am - 6:00pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED FOR SUMMER"
+    "exception:": "CLOSED FOR SUMMER",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130704290844004442/Screenshot_2023-07-17_at_23.35.06.png"
 },
 {
     "id": 9,
@@ -88,7 +96,8 @@
         "Friday": "8:30am - 5:00pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED FOR SUMMER"
+    "exception:": "CLOSED FOR SUMMER",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130598916539293836/82965606_1510801475752464_4910559856537278273_n.png"
 },
 {
     "id": 10,
@@ -98,5 +107,6 @@
         "Monday - Friday": "11:00am - 7:00pm",
         "Saturday - Sunday": "Closed"
     },
-    "exception:": "CLOSED FOR SUMMER"
+    "exception:": "CLOSED FOR SUMMER",
+    "image": "https://cdn.discordapp.com/attachments/1129990582350118933/1130599114422370364/Untitled20design.png"
 }]

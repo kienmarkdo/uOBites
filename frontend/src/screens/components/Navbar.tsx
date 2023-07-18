@@ -16,6 +16,10 @@ export default function Navbar() {
         navigate('/');
     }
 
+    const navigateToLogin = () => {
+        navigate('/')
+    }
+
     const navigateToHome = () => {
         navigate('/home', { state: {email} });
     }
@@ -77,32 +81,16 @@ export default function Navbar() {
                 </div>
             </>
             ) : (
-            <>
-                <div className="landing-header">
-                    <div className="d-flex align-items-center">
-                    <img src={appLogo} alt="uOBites" width={"5%"} />
-                    <h4 className="ms-2 mt-2">uOBites</h4>
-                    </div>
-                    <div>
-                    <PersonCircle
-                        size={25}
-                        className="landing-page-icon me-4"
-                        title="View Profile"
-                        onClick={viewProfile}
-                    />
-                    <BoxArrowRight
-                        size={25}
-                        className="landing-page-icon me-4"
-                        title="Logout"
-                        onClick={logout}
-                    />
-                    </div>
-                </div>
-            </>
+                    <>
+                        <div className="landing-header">
+                            <div className="d-flex align-items-center">
+                                <img src={appLogo} alt="uOBites" width={"5%"} title="Login"
+                                    onClick={navigateToLogin} style={{ cursor: "pointer" }} />
+                                <h4 className="ms-2 mt-2">uOBites</h4>
+                            </div>
+                        </div>
+                </>
             )}
-
-
         </>
-
     );
 }

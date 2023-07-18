@@ -7,30 +7,36 @@ import Form from 'react-bootstrap/Form';
 import { Alert } from "react-bootstrap";
 import Button from 'react-bootstrap/Button';
 import { Modal } from 'react-bootstrap';
+import { subtract } from 'cypress/types/lodash';
 
 const PaymentPage = () => {
 
   const navigate = useNavigate();
 
-  //TODO pass props
+  //TODO pass props to order status page
   const navigateToOrderStatus = () => {
     navigate('/OrderStatus');
   };
 
+  //all the props passed from menu
   const location = useLocation();
   const { email = "bob@bob.com" } = location.state || {}; // value is passed from the menu page
   //TODO remove bob later when menu is implemented, pass email props to payment
- 
-  //all the props passed from menu
-  const { itemCount = 2 } = location.state || {}; // value is passed from the menu page
-  const { subTotal = 30 } = location.state || {}; // value is passed from the menu page
-  const {cart} = location.state || {}; //value passed from menu
+  //const {cart = {food1: [2,10], food2:[1,5]}} = location.state || {}; //value passed from menu
 
+  //todo get props instead
+  const [cart, setCart] = useState<{ [foodItem: string]: [quantity: number, price: number] }>({
+    food1: [2, 13.2],
+    food2: [1, 15.5],
+  });
+
+  const [itemCount, setItemCount] = useState<number | null>(null);
+  const [subTotal, setSubTotal] = useState<number>(0); //total without tax
   const [tax, setTax] = useState<number | null>(null); //13% of subtotal
   const [orderTotal, setOrderTotal] = useState<number | null>(null); //113% of subtotal
+  
   const [cardNum, setCardNum] = useState<number | null>(null);
   const [cardCVC, setCardCVC] = useState<number | null>(null);
-
   const [useFlex, setUseFlex] = useState<boolean>(true); //false -> we want credit card form to appear
   const [isCardNumValid, setIsCardNumValid] = useState<boolean>(false);
   const [isSecurityNumValid, setIsSecurityNumValid] = useState<boolean>(false);
@@ -45,11 +51,25 @@ const PaymentPage = () => {
     if (email) {
       setIsLoggedIn(true);
 
+      //calculate total price
+      calculateEstimatedTotal();
+
       //calculate tax and orderTotal
-      setTax(0.13*subTotal);
-      setOrderTotal(1.13*subTotal);
+      setTax(Number((0.13 * subTotal).toFixed(2))); // 13% of subtotal with 2 decimal places
+      setOrderTotal(Number((1.13 * subTotal).toFixed(2))); // 113% of subtotal with 2 decimal places
     }
   }, [email]);
+
+  const calculateEstimatedTotal = () => {
+    let estimatedTotal: number = 0
+
+    Object.keys(cart).map((foodItem) => {
+      const [quantity, price] = cart[foodItem];
+      return estimatedTotal += (quantity * price)
+    })
+
+    setSubTotal(estimatedTotal);
+  }
 
   const handleAndValidateCardNum = (event: ChangeEvent<HTMLInputElement>) => {
     const cardInput = event.target.value;
@@ -110,7 +130,9 @@ const PaymentPage = () => {
 
           <div className='container' style={{padding:0}}>
             <div className='row'>
-              <div className='col-9' style={{padding:20}}>
+
+              {/* Payment info */}
+              <div className='col-9' style={{paddingRight:100}}>
                 <h3>Payment Information</h3>
                 <Form className="mb-4 mt-4">
                 <h5> Please select a payment method</h5>
@@ -207,12 +229,40 @@ const PaymentPage = () => {
               </div>
 
               {/* Order summary */}
-              <div className='col-3'  style={{borderLeft: "2px solid grey"}}>
+              <div className='col-3'  style={{borderLeft: "2px solid grey", paddingLeft:30}}>
                 <h3>Order Summary</h3>
-                <div>
-                  <p>Items ({itemCount}): ${subTotal} <br></br>
-                  Estimated GST/HST: ${tax?.toFixed(2)} <br></br>
-                  Order Total: ${orderTotal}</p>  
+                <div style={{padding : 10}}>
+                  {Object.keys(cart).length !== 0 ? (
+                    Object.keys(cart).map((foodItem) => {
+                      const [quantity, price] = cart[foodItem];
+                      return (
+                        <div className="row" key={foodItem}>
+                          <div className="col-10">
+                            <h6>x{quantity} {foodItem}</h6>
+                          </div>
+                          <div className="col-2">
+                            <h6>${(price*quantity).toFixed(2)} </h6>
+                          </div>
+                        </div>
+                      );
+                    })
+                  ) : (
+                    <h6>No items in the cart</h6>
+                 )}
+                 <hr></hr>
+                  <div className="row" key={subTotal}>
+                    <div className="col-10">
+                      <h6>Subtotal:</h6>
+                      <h6>Estimated GST/HST:</h6>
+                      <h6>Order Total:</h6>
+                    </div>
+                    <div className="col-2">
+                      <h6>${subTotal.toFixed(2)} </h6>
+                      <h6>${tax?.toFixed(2)} </h6>
+                      <h6>${orderTotal}</h6>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>

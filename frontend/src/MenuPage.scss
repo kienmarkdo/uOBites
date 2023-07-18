@@ -12,18 +12,16 @@
     padding: 2vh 15vw;
 }
 
-.menu-list {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-top: 5px;
+.quantity-modify-btn:hover {
+    cursor: pointer;
+    transform: scale(1.2);
 }
 
-.menu-item {
-    // // display: flex;
-    // flex-direction: column;
-    // justify-content: center;
-    // align-items: center;
-    text-align: center;
-    margin: 20px;
+.view-cart-btn {
+    margin-right: 55px;
+}
+
+.view-cart-btn:hover {
+    cursor: pointer;
+    color: #9f9f9f;
 }

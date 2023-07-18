@@ -198,7 +198,7 @@ const MenuPage = () => {
                           <h6>x{quantity} {foodItem}</h6>
                         </div>
                         <div className="col-2">
-                          <h6>${price.toFixed(2)}</h6>
+                          <h6>${(price*quantity).toFixed(2)} </h6>
                         </div>
                       </div>
                     );
@@ -207,9 +207,11 @@ const MenuPage = () => {
                   <h6>No items in the cart</h6>
                 )}
                 <hr />
-                <h6 className='text-end'>
-                  Estimated Subtotal: <span>${calculateEstimatedTotal().toFixed(2)}</span>
-                </h6>
+                <div className='row px-1'>
+                  <h6 className='text-end'>
+                    Estimated Subtotal: <span>${calculateEstimatedTotal().toFixed(2)}</span>
+                  </h6>
+                </div>
               </div>         
             </Modal.Body>
           </Modal>

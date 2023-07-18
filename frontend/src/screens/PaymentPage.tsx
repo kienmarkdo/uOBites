@@ -24,7 +24,8 @@ const PaymentPage = () => {
   //all the props passed from menu
   const { itemCount = 2 } = location.state || {}; // value is passed from the menu page
   const { subTotal = 30 } = location.state || {}; // value is passed from the menu page
- 
+  const {cart} = location.state || {}; //value passed from menu
+
   const [tax, setTax] = useState<number | null>(null); //13% of subtotal
   const [orderTotal, setOrderTotal] = useState<number | null>(null); //113% of subtotal
   const [cardNum, setCardNum] = useState<number | null>(null);
@@ -102,114 +103,122 @@ const PaymentPage = () => {
     <>
       {isLoggedIn ? (
         <>
-        <Navbar />
-        <div className="container p-5">
-          <h2 className="text-center mb-4">Checkout</h2>
-        </div>
-        <div className="checkout-container">
-          <div className="checkout-main-content">
-            <h3>Payment Information</h3>
-            <Form className="mb-4 mt-4">
-            <h5> Please select a payment method</h5>
-            <br></br>
-            <Form.Check
-              type="radio"
-              label="Flex Card"
-              name="radioGroup"
-              value="Flex Card"
-              onChange={handlePaymentChange}
-            />
+          <Navbar />
+          <div className = "container p-5">
+            <h2 className='text-center mb-4'>Checkout</h2>
+          </div>
 
-            <Form.Check
-              type="radio"
-              label="Credit/Debit card"
-              name="radioGroup"
-              value="card"
-              checked = {useFlex}
-              onChange={handlePaymentChange}
-            />
-            </Form>
-            {useFlex ? (
-              //if use credit card
-              <div className="container p-5">
-                <h5>Please enter billing information:</h5>
-                <Form className="mt-2 mb-4" onSubmit={handlePay}>
-                  <Form.Group >
-                    <Form.Label>Card Number <span className="text-danger">*</span></Form.Label>
-                        <Form.Control
-                          required
-                          id="cardNumber"
-                          type="number"
-                          value={cardNum || ""}
-                          maxLength={16}
-                          placeholder = "5xxx xxxx xxxx xxxx"
-                          onChange ={handleAndValidateCardNum}
-                        />
-                        {!isCardNumValid &&
-                        <small className="text-danger">Please enter a valid card number.</small>}
-                  </Form.Group>
-                  
-                  <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Name on card <span className="text-danger">*</span></Form.Label>
-                      <Form.Control
-                        required
-                        id="cardName"
-                        type="text"
-                        placeholder='John Doe'
-                        maxLength={255}
-                      />
-                  </Form.Group>
+          <div className='container' style={{padding:0}}>
+            <div className='row'>
+              <div className='col-9' style={{padding:20}}>
+                <h3>Payment Information</h3>
+                <Form className="mb-4 mt-4">
+                <h5> Please select a payment method</h5>
+                <br></br>
+                  <Form.Check
+                  type="radio"
+                  label="Flex Card"
+                  name="radioGroup"
+                  value="Flex Card"
+                  onChange={handlePaymentChange}
+                  />
 
-                  <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Expiration date <span className="text-danger">*</span></Form.Label>
-                      <Form.Control
-                        required
-                        id="expiry"
-                        type="date"
-                      />
-                  </Form.Group>
-
-                  <Form.Group className="mt-2 mb-4">
-                    <Form.Label>Security Number (CVV/CVC) <span className="text-danger">*</span></Form.Label>
-                      <Form.Control
-                        required
-                        id="securityNumber"
-                        type="number"
-                        value={cardCVC || ""}
-                        placeholder = "123"
-                        onChange ={handleAndValidateCVC}
-                      />
-                      {!isSecurityNumValid &&
-                      <small className="text-danger">Please enter a valid CVV/CVC number.</small>}
-                  </Form.Group>
-                  <div className="text-center">
-                      <Button className="uottawa-btn" type="submit">
-                        Pay with credit/debit card
-                      </Button>
-                  </div>
+                <Form.Check
+                type="radio"
+                label="Credit/Debit card"
+                name="radioGroup"
+                value="card"
+                checked = {useFlex}
+                onChange={handlePaymentChange}
+                />
                 </Form>
+
+                {useFlex ? (
+                  //use credit card 
+                  <div>
+                    <h5>Please enter billing information:</h5>
+                    <Form className="mt-2 mb-4" onSubmit={handlePay}>
+                      <Form.Group >
+                        <Form.Label>Card Number <span className="text-danger">*</span></Form.Label>
+                          <Form.Control
+                            required
+                            id="cardNumber"
+                            type="number"
+                            value={cardNum || ""}
+                            maxLength={16}
+                            placeholder = "5xxx xxxx xxxx xxxx"
+                            onChange ={handleAndValidateCardNum}
+                          />
+                          {!isCardNumValid &&
+                          <small className="text-danger">Please enter a valid card number.</small>}
+                      </Form.Group>
+
+                      <Form.Group className="mt-2 mb-4">
+                        <Form.Label>Name on card <span className="text-danger">*</span></Form.Label>
+                          <Form.Control
+                            required
+                            id="cardName"
+                            type="text"
+                            placeholder='John Doe'
+                            maxLength={255}
+                          />
+                      </Form.Group> 
+                      
+                      <Form.Group className="mt-2 mb-4">
+                        <Form.Label>Expiration date <span className="text-danger">*</span></Form.Label>
+                          <Form.Control
+                            required
+                            id="expiry"
+                            type="date"
+                          />
+                      </Form.Group>   
+
+                      <Form.Group className="mt-2 mb-4">
+                        <Form.Label>Security Number (CVV/CVC) <span className="text-danger">*</span></Form.Label>
+                          <Form.Control
+                            required
+                            id="securityNumber"
+                            type="number"
+                            value={cardCVC || ""}
+                            placeholder = "123"
+                            onChange ={handleAndValidateCVC}
+                          />
+                          {!isSecurityNumValid &&
+                          <small className="text-danger">Please enter a valid CVV/CVC number.</small>}
+                      </Form.Group>     
+
+                      <div className="text-center">
+                        <Button className="uottawa-btn" type="submit">
+                          Pay with credit/debit card
+                        </Button>
+                      </div>              
+
+                    </Form>
+                  </div>
+                ) : (
+                  //use flex
+                  <div className='mb-4 mt-4'>
+                    <p>Your student card balance will be charged for this transaction.</p>
+                    <Button className="uottawa-btn mt-4" onClick={navigateToOrderStatus}>
+                      Pay with Flex Card
+                    </Button>
+                  </div>
+                )}
               </div>
-            ) : (
-              //if use flex
-              <div className='mb-4 mt-4'>
-                <p>Your student card balance will be charged for this transaction.</p>
-                <Button className="uottawa-btn mt-4" onClick={navigateToOrderStatus}>
-                  Pay with Flex Card
-                </Button>
+
+              {/* Order summary */}
+              <div className='col-3'  style={{borderLeft: "2px solid grey"}}>
+                <h3>Order Summary</h3>
+                <div>
+                  <p>Items ({itemCount}): ${subTotal} <br></br>
+                  Estimated GST/HST: ${tax?.toFixed(2)} <br></br>
+                  Order Total: ${orderTotal}</p>  
+                </div>
               </div>
-            )}
-            
-        </div>
-          <div className="checkout-sidebar">
-            <h3>Order Summary</h3>
-            <div>
-            <p>Items ({itemCount}): ${subTotal} <br></br>
-            Estimated GST/HST: ${tax?.toFixed(2)} <br></br>
-            Order Total: ${orderTotal}</p>  
             </div>
           </div>
-        </div>
         </>
+
       ) : (
         <>
           <Modal size="lg" centered show={true} className='modal-style'>

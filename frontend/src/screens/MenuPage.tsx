@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../MenuPage.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, useLocation } from 'react-router-dom';
-import { Button, Form, Modal } from 'react-bootstrap';
+import { Modal } from 'react-bootstrap';
 import Navbar from './components/Navbar';
 import OutletInfoJson from '../data/foodOutletsInfo.json';
 import { PlusLg, DashLg, InfoCircleFill, Cart4 } from 'react-bootstrap-icons';
@@ -92,23 +92,34 @@ const MenuPage = () => {
           <h1 className='menu-title'>{info.outletName}</h1>
           <section className='menu-container'>
             <div className='info-container'>
-            <h2>Information</h2>
-            <br />
-              {OutletInfoJson.map((outlet) => {
+              <h2>Information</h2>
+              <br />
+               {OutletInfoJson.map((outlet) => {
                 if (outlet.id === info.outletId) {
                   return (
-                    <>
-                      <p><strong>Location: </strong>{outlet.location}</p>
-                      <p><strong>Hours: </strong></p>
-                      <ul>
-                        {Object.entries(outlet.hoursOfOperation).map(([day, hours]) => (
-                          <li key={day}>
-                            <strong>{day}</strong> : {hours}
-                          </li>
-                        ))}
-                      </ul>
-                      <p><strong>Exception: </strong>{outlet['exception:']}</p>
-                    </>  
+                    <div className="container">
+                      <div className="row">
+                        <div className="col-md-7">
+                          <p><strong>Location: </strong>{outlet.location}</p>
+                          <p><strong>Hours: </strong></p>
+                          <ul>
+                            {Object.entries(outlet.hoursOfOperation).map(([day, hours]) => (
+                              <li key={day}>
+                                <strong>{day}</strong> : {hours}
+                              </li>
+                            ))}
+                          </ul>
+                          <p><strong>Exception: </strong>{outlet['exception:']}</p>
+                        </div>
+                        <div className="col-md-5 px-5">
+                          <img
+                            src={outlet.image}
+                            alt={outlet.name}
+                            width={"100%"}
+                          />
+                        </div>
+                      </div>
+                    </div>
                   );
                 } else {
                   return <></>;
@@ -117,14 +128,17 @@ const MenuPage = () => {
               <br />
               <hr />
             </div>
-            <h2 className='text-center text-decoration-underline'>Menu</h2>
-            <div className='d-flex align-items-center justify-content-center'>
-              <InfoCircleFill size={20} />
-              <h6 className='mt-2 mx-2'>Start adding to your cart by using the + and - button</h6>
+            <div className='d-flex justify-content-between'>
+              <div></div>
+              <h2 className='text-center text-decoration-underline'>Menu</h2>
+              <div className='d-flex align-items-center view-cart-btn' onClick={handleShowModal}>
+                <h6 className='mt-3 mx-2'>View Cart</h6>
+                <Cart4 size={30} />
+              </div>
             </div>
-            <div className='d-flex align-items-center justify-content-end view-cart-btn' onClick={handleShowModal}>
-              <h6 className='mt-3 mx-2'>View Cart</h6>
-              <Cart4 size={30} />
+            <div className='d-flex align-items-center justify-content-center'>
+              <InfoCircleFill className='me-2' size={20} />
+              <h6 className='mt-2'>Start adding to your cart by using the + and - button</h6>
             </div>
             <br />
               {OutletMenuJson.map((outlet) => {
@@ -192,7 +206,7 @@ const MenuPage = () => {
                 )}
                 <hr />
                 <h6 className='text-end'>
-                  Estimated total: <span>${calculateEstimatedTotal().toFixed(2)}</span>
+                  Estimated Subtotal: <span>${calculateEstimatedTotal().toFixed(2)}</span>
                 </h6>
               </div>         
             </Modal.Body>

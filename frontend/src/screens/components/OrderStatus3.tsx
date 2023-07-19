@@ -1,9 +1,12 @@
 import { useEffect, useState } from 'react';
 import { CheckCircleFill, ArrowRight } from "react-bootstrap-icons";
 import "../../OrderStatus.scss";
-import { Alert } from 'react-bootstrap';
+import { Alert, Button } from 'react-bootstrap';
+import { useNavigate } from 'react-router';
 
 export default function OrderStatus3() {
+
+    const navigate = useNavigate();
     
     // resizes the icons depending on the screen/window size
     const [iconSize, setIconSize] = useState(100);
@@ -42,6 +45,7 @@ export default function OrderStatus3() {
             <Alert style={{marginTop: "5vh"}} variant='success'>
                 <Alert.Heading>Your order is complete!</Alert.Heading>
                 <p>Please pick up your order.</p>
+                <Button variant="success" onClick={() => navigate("/home")}>Return to Home Page</Button>
             </Alert>
         </>
     )

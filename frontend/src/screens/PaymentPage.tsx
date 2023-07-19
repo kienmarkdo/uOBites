@@ -114,7 +114,7 @@ const PaymentPage = () => {
             <h2 className='text-center mb-4'>Checkout</h2>
           </div>
 
-          <div className='container' style={{padding:0}}>
+          <div className='container' style={{padding:0, paddingBottom: "10vh"}}>
             <div className='row'>
               
               {/* Payment info */}

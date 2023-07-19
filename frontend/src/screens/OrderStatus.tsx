@@ -72,12 +72,13 @@ export default function OrderStatus() {
             {isLoggedIn ? (
                     <>
                         <div className='pageContainer'>
-                            <h1 style={{textAlign: 'center'}}>Order Confirmation #{getRandomOrderId()}</h1>
+                            {/* // TODO: Fix the random Order ID */}
+                            <h1 style={{textAlign: 'center'}}>Order Confirmation #{328976583}</h1>
                             {displayOrderStatus()}
                             <section className='orderSummary'>
                                 <h3>Order Summary</h3>
-                                <p>{orderSummary.email}</p>
-                                <p>Order Total : {orderSummary.total}</p>
+                                <p>Email: {orderSummary.email}</p>
+                                <p>Order Total: ${orderSummary.total}</p>
                             </section>
                         </div>
                     </>

@@ -52,3 +52,31 @@ Clone and navigate to the root of the repo. Instructions below are in bash termi
     - Go to Services. Find PostgreSQL. Right click and click Start.
  ![image](https://github.com/kienmarkdo/uOBites/assets/67518620/d5a461f6-6fd2-44b0-b078-9fbabc9994eb)
 
+
+### Deployment using Ngrok self-hosting
+For the purposes and scale of our project, hosting the PostgreSQL database, Flask backend, and TypeScript frontend is too complicated on popular cloud hosting solutions such as AWS, Azure, or Heroku. These solutions require some form of payment- either by the hour, or by the number of API calls; moreover, the setup is tedious and usually requires product-specific training and certification in order to know how to deploy a full-stack application. Given the short time that we have for our project, we have decided to go with a fast and free "cloud" solution using ngrok, a reverse proxy that creates a secure tunnel from a public endpoint to a locally running web service.
+
+When we host a website on a server (AWS, Heroku, etc.), all we are doing is borrowing someone else's computer for them to run our frontend, backend, database, the same way we have to do locally, using commands like “npm run start”, “python app.py”, and then telling them to leave their computer on so that our web app can stay online 24/7. Instead of paying for Amazon Web Services or Microsoft Azure for their machines, ngrok allows us to host our full-stack application using our own computer as the server. It also provides a free domain to host our application. Anything the developer sees on localhost, ngrok will make available for anyone to view on the internet.
+
+
+To get started:
+- Create an Ngrok account then go to this URL
+    - https://dashboard.ngrok.com/get-started/setup
+    - Scroll down to **2. Connect your account**
+    - Copy that command `ngrok config add-authtoken <YOUR_TOKEN>`
+    - Open Terminal in root of project, run that command.
+        - NOTE: you may need to run `./ngrok...` (with `./` in front of the command) instead of `ngrok`
+- Start the server and generate a URL for the uOBites app
+    - Open the terminal in the root of the project
+    - Type `./ngrok http 3000 --host-header="localhost:3000"`
+- Configure the proxy for the backend
+    - Open package.json
+    - In `"proxy": "EDIT_THIS_WITH_NGROK_URL:5000",`
+    - Change "EDIT_THIS_WITHNGROK_URL" to the randomly generated URL in the previous step.
+- Done 
+    - You can send this URL to anyone and they will be able to use it
+    - You will be able to see the requests come and go in your terminal as people use the app
+    - To stop the server, simply `Ctrl + C`
+    - The next time you run `./ngrok http 3000 --host-header="localhost:3000"` again, a new URL will be generated
+        - Make sure to upadte package.json proxy as mentioned
+

@@ -39,8 +39,10 @@ def register_user():
     lastName = data["last_name"]
     flex_card = data["flex_card"]
 
-    salt = bcrypt.gensalt() # generates a salt to hash the password, and adds an extra layer of security
-    hashed_password = bcrypt.hashpw(password.encode('utf-8'), salt) # Hash the password using the salt
+    # generates a salt to hash the password, and adds an extra layer of security
+    salt = bcrypt.gensalt()
+    hashed_password = bcrypt.hashpw(password.encode(
+        'utf-8'), salt)  # Hash the password using the salt
 
     # Check if the username already exists
     cursor.execute(
@@ -56,7 +58,8 @@ def register_user():
     INSERT INTO User_account (email, password, first_name, last_name, flex_card)
     VALUES (%s, %s, %s, %s, %s)
     """
-    values = (email, hashed_password.decode('utf-8'), firstName, lastName, flex_card)
+    values = (email, hashed_password.decode(
+        'utf-8'), firstName, lastName, flex_card)
     cursor.execute(query, values)
     conn.commit()
     cursor.close()  # close db connection
@@ -68,6 +71,7 @@ def register_user():
     # Return the response with the generated user_id
     return jsonify({'message': 'User registered successfully'})
     # return "Success"
+
 
 @app.route("/login_user", methods=["POST"])
 def login_user():
@@ -86,11 +90,14 @@ def login_user():
     c1.execute(query, values)
 
     entry = c1.fetchone()
-    
+
     if entry:
-        password_in_db = entry[2].encode('utf-8') # gets the password and encodes it in order to use function checkpw
-        do_password_match = bcrypt.checkpw(password.encode('utf-8'), password_in_db) # compares the input of the user and the hashed password in the db
-        
+        # gets the password and encodes it in order to use function checkpw
+        password_in_db = entry[2].encode('utf-8')
+        # compares the input of the user and the hashed password in the db
+        do_password_match = bcrypt.checkpw(
+            password.encode('utf-8'), password_in_db)
+
         # checks if password matches
         if do_password_match:
             match = True
@@ -104,10 +111,10 @@ def login_user():
 
     # if email and password match an account
     if match:
-        return jsonify({'exists':True, 'message':'Login successful'})
+        return jsonify({'exists': True, 'message': 'Login successful'})
     else:
-        return jsonify({'exists':False, 'message':'Wrong password or email entered'})
-    
+        return jsonify({'exists': False, 'message': 'Wrong password or email entered'})
+
 
 @app.route("/get_all_users", methods=["GET"])
 def get_all_users():
@@ -185,6 +192,7 @@ def get_user_info():
     else:
         return jsonify({'message': 'User not found'})
 
+
 @app.route("/update_user_info", methods=["PUT"])
 def update_user_info():
     """
@@ -209,7 +217,7 @@ def update_user_info():
     flex_card = %s
     where email = %s
     '''
-    
+
     values = (firstName, lastName, flex_card, email)
     c1.execute(query, values)
 
@@ -218,8 +226,9 @@ def update_user_info():
     conn.close()
 
     return jsonify({
-        'message':'Successfully updated profile information'})
+        'message': 'Successfully updated profile information'})
 
 
 if __name__ == "__main__":
-    app.run(debug=True)  # debug=True because we are in development mode
+    # app.run(debug=True)  # debug=True because we are in development mode
+    app.run(debug=False)

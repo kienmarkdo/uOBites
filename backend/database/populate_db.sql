@@ -12,10 +12,10 @@ INSERT INTO
 VALUES
     (
         DEFAULT,
-        'kien@kien.com',
-        'ABCD1234',
+        'kien@uottawa.ca',
+        '$2b$12$r4OEmDuoN00mX/8rA4GQGup6RtL1.bXwO22cxltina6yKmBZYFNrK', -- ABCD1234
         'Kien',
-        'D',
+        'Do',
         NULL
     );
 
@@ -24,20 +24,8 @@ INSERT INTO
 VALUES
     (
         DEFAULT,
-        'bob@bob.com',
-        'ABCD1234',
-        'Bob',
-        'Marley',
-        123123123
-    );
-
-INSERT INTO
-    User_account
-VALUES
-    (
-        DEFAULT,
         'celine@uottawa.ca',
-        'password123',
+        '$2b$12$r4OEmDuoN00mX/8rA4GQGuUaSqFrk.xrGoZe4T53rjWIytUu8P1ue', -- password123
         'Celine',
         'Wan',
         123582920
@@ -49,8 +37,20 @@ VALUES
     (
         DEFAULT,
         'amy@uottawa.ca',
-        'abc1234',
+        '$2b$12$r4OEmDuoN00mX/8rA4GQGuYQDOOEkelyi9SzQ9wwuAPYkXndKLMQG', -- abc1234
         'Amy',
         'Kkiti',
         123109393
+    );
+
+INSERT INTO
+    User_account
+VALUES
+    (
+        DEFAULT,
+        'jordan@uottawa.ca',
+        '$2b$12$r4OEmDuoN00mX/8rA4GQGu4Tp2H9GSPDqgIswOtFulG/pEicJEqqm', -- 1234567
+        'Jordan',
+        'Takefman',
+        123123123
     );

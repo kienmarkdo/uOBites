@@ -13,7 +13,11 @@ const PaymentPage = () => {
 
   //TODO pass props to order status page
   const navigateToOrderStatus = () => {
-    navigate('/OrderStatus');
+    const orderSummary = {
+      email: email,
+      total: orderTotal,
+  };
+    navigate('/orderStatus', {state: orderSummary});
   };
 
   //all the props passed from menu

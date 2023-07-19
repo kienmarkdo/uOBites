@@ -6,6 +6,7 @@ import Navbar from './components/Navbar'
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import { Modal } from 'react-bootstrap';
+import axios from 'axios';
 
 const PaymentPage = () => {
 
@@ -27,9 +28,10 @@ const PaymentPage = () => {
   
   const [cardNum, setCardNum] = useState<number | null>(null);
   const [cardCVC, setCardCVC] = useState<number | null>(null);
-  const [useFlex, setUseFlex] = useState<boolean>(true); //false -> we want credit card form to appear
+  const [useFlex, setUseFlex] = useState<boolean>(true); //false -> we want credit card form to appear (for radios)
   const [isCardNumValid, setIsCardNumValid] = useState<boolean>(true);
   const [isSecurityNumValid, setIsSecurityNumValid] = useState<boolean>(true);
+  const [flexNum, setFlexNum] = useState<number | null>(null);
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
@@ -48,8 +50,25 @@ const PaymentPage = () => {
       setTax(calculatedTax);
       setOrderTotal(calculatedOrderTotal);
 
+      fetchUserInfo(); //get flex card
+
     }
   }, [email, subTotal]);
+
+  const fetchUserInfo = async () => {
+    try{
+        const response = await axios.get('/get_user_info', {
+            params:{
+                email: email
+            }
+        });
+
+        setFlexNum(response.data.flex_card);
+    }
+    catch(error){
+        console.error('Error while fetching data from db: ', error);
+    }
+  }
 
   const calculateEstimatedTotal = () => {
     let estimatedTotal: number = 0
@@ -201,12 +220,20 @@ const PaymentPage = () => {
                   </div>
                 ) : (
                   //use flex
-                  <div className='mb-4 mt-4'>
-                    <p>Your student card balance will be charged for this transaction.</p>
-                    <Button className="uottawa-btn mt-4" onClick={navigateToOrderStatus}>
-                      Pay with Flex Card
-                    </Button>
-                  </div>
+                  flexNum === null ? (
+                    <div className='mb-4 mt-4'>
+                      <p>You do not have a Flex card registered.</p>
+                    </div>
+
+                  ) :(
+                    <div className='mb-4 mt-4'>
+                      <p>Your student card balance will be charged for this transaction.</p>
+                      <Button className="uottawa-btn mt-4" onClick={navigateToOrderStatus}>
+                        Pay with Flex Card
+                      </Button>
+                    </div>
+                  )
+                  
                 )}
               </div>
 

@@ -58,8 +58,8 @@ describe('Complete test suite that covers basic authentication functionalities',
         cy.get("[id='lastName']").type("Do");
         cy.get("[id='lastName']").should('have.value', 'Do');
 
-        cy.get("[id='email']").type("kien@kien.com");
-        cy.get("[id='email']").should('have.value', 'kien@kien.com');
+        cy.get("[id='email']").type("kien@uottawa.ca");
+        cy.get("[id='email']").should('have.value', 'kien@uottawa.ca');
 
         cy.get("[id='flexCard']").type("123123123");
         cy.get("[id='flexCard']").should('have.value', '123123123');
@@ -85,8 +85,8 @@ describe('Complete test suite that covers basic authentication functionalities',
         cy.get("[id='lastName']").type("Do");
         cy.get("[id='lastName']").should('have.value', 'Do');
 
-        cy.get("[id='email']").type("kien@kien.com");
-        cy.get("[id='email']").should('have.value', 'kien@kien.com');
+        cy.get("[id='email']").type("kien@uottawa.ca");
+        cy.get("[id='email']").should('have.value', 'kien@uottawa.ca');
 
         cy.get("[id='flexCard']").type("123123123");
         cy.get("[id='flexCard']").should('have.value', '123123123');
@@ -142,8 +142,8 @@ describe('Complete test suite that covers basic authentication functionalities',
         cy.get("[id='lastName']").type("Do");
         cy.get("[id='lastName']").should('have.value', 'Do');
 
-        cy.get("[id='email']").type("kien@kien.com");
-        cy.get("[id='email']").should('have.value', 'kien@kien.com');
+        cy.get("[id='email']").type("kien@uottawa.ca");
+        cy.get("[id='email']").should('have.value', 'kien@uottawa.ca');
 
         cy.get("[id='flexCard']").type("123123123");
         cy.get("[id='flexCard']").should('have.value', '123123123');
@@ -191,8 +191,8 @@ describe('Complete test suite that covers basic authentication functionalities',
 
         cy.visit("http://localhost:3000", { timeout: 30000 });
 
-        cy.get("[type='email']").type('kien@kien.com');
-        cy.get("[type='email']").should('have.value', 'kien@kien.com');
+        cy.get("[type='email']").type('kien@uottawa.ca');
+        cy.get("[type='email']").should('have.value', 'kien@uottawa.ca');
 
         cy.get("[type='password']").type('ABCD1234');
         cy.get("[type='password']").should('have.value', 'ABCD1234');

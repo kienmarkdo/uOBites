@@ -28,7 +28,7 @@ const RegistrationPage = () => {
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
 
     const [registerStatusMessage, setRegisterStatusMessage] = useState<string>(""); // to display success/failed status after clicking Create Account button
-    const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("primary");
+    const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("link");
 
     const handleAndValidateEmail = (event: ChangeEvent<HTMLInputElement>) => {
         

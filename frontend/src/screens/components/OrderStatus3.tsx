@@ -4,8 +4,9 @@ import "../../OrderStatus.scss";
 import { Alert, Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router';
 
-export default function OrderStatus3() {
-
+export default function OrderStatus3(props: { email: string; }) {
+    
+    const email = props.email;
     const navigate = useNavigate();
     
     // resizes the icons depending on the screen/window size
@@ -45,7 +46,7 @@ export default function OrderStatus3() {
             <Alert style={{marginTop: "5vh"}} variant='success'>
                 <Alert.Heading>Your order is complete!</Alert.Heading>
                 <p>Please pick up your order.</p>
-                <Button variant="success" onClick={() => navigate("/home")}>Return to Home Page</Button>
+                <Button variant="success" onClick={() => navigate("/home", {state: {email}})}>Return to Home Page</Button>
             </Alert>
         </>
     )

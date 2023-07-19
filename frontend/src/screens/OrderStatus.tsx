@@ -61,7 +61,7 @@ export default function OrderStatus() {
         } else if (orderStatusNum === 1) {
             return <OrderStatus2 />
         } else if (orderStatusNum === 2) {
-            return <OrderStatus3 />
+            return <OrderStatus3 email={orderSummary.email} />
         } else {
             return <h1>UNKNOWN ERROR: Cannot display order status</h1>
         }

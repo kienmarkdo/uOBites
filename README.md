@@ -1,6 +1,7 @@
 # uOBites
 A fictional food ordering web application that allows users to place an online order from any of the food vendor on uOttawa's campus
 
+Project Demo: [https://www.youtube.com/watch?v=M2wyG8Kt3fA](https://www.youtube.com/watch?v=oDk0JUee90M)
 
 
 ## Developer instructions

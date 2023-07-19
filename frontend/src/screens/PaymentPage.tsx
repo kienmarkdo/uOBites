@@ -13,7 +13,11 @@ const PaymentPage = () => {
 
   //TODO pass props to order status page
   const navigateToOrderStatus = () => {
-    navigate('/OrderStatus');
+    const orderSummary = {
+      email: email,
+      total: orderTotal,
+  };
+    navigate('/orderStatus', {state: orderSummary});
   };
 
   //all the props passed from menu
@@ -110,7 +114,7 @@ const PaymentPage = () => {
             <h2 className='text-center mb-4'>Checkout</h2>
           </div>
 
-          <div className='container' style={{padding:0}}>
+          <div className='container' style={{padding:0, paddingBottom: "10vh"}}>
             <div className='row'>
               
               {/* Payment info */}

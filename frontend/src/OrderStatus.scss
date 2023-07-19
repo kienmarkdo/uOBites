@@ -1,0 +1,40 @@
+.pageContainer {
+    margin: 10vh 15vw;
+}
+
+.orderSummary {
+    margin-top: 5vh;
+}
+
+.statusContainer {
+    margin-top: 10vh;
+}
+
+.progressBar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.iconGroup {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+.arrowStyle {
+    color: #8F99A8;
+    margin-bottom: 50px;
+
+    @media (max-width: 768px) {
+        visibility: hidden;
+    }
+}
+
+.iconGroup>.iconStyle {
+    margin: 0px auto 20px auto;
+}
+
+.iconGroup>.iconStyle.incomplete {
+    color: #C5CBD3;
+}

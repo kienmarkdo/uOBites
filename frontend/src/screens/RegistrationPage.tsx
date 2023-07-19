@@ -7,6 +7,7 @@ import { Alert, InputGroup } from "react-bootstrap";
 import { EyeFill, EyeSlashFill } from "react-bootstrap-icons";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import Navbar from "./components/Navbar";
 
 const RegistrationPage = () => {
 
@@ -27,7 +28,7 @@ const RegistrationPage = () => {
     const [showPassword2, setShowPassword2] = useState<boolean>(false);
 
     const [registerStatusMessage, setRegisterStatusMessage] = useState<string>(""); // to display success/failed status after clicking Create Account button
-    const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("primary");
+    const [registerStatusVariant, setRegisterStatusVariant] = useState<string>("link");
 
     const handleAndValidateEmail = (event: ChangeEvent<HTMLInputElement>) => {
         
@@ -103,6 +104,7 @@ const RegistrationPage = () => {
 
     return (
         <>
+            <Navbar />
             <Form className="container p-5" onSubmit={handleSubmit}>
                 <h3 className="text-center">Register now to start ordering from uOBites</h3>
                 <Form.Group className="mt-2 mb-4">

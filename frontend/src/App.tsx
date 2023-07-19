@@ -5,6 +5,8 @@ import LoginPage from './screens/LoginPage';
 import EditProfile from './screens/EditProfile';
 import NoRouteFound from './screens/NoRouteFound';
 import MenuPage from './screens/MenuPage';
+import PaymentPage from './screens/PaymentPage';
+import OrderStatus from './screens/OrderStatus';
 
 const App = () => {
     return (
@@ -14,6 +16,8 @@ const App = () => {
                 <Route path="/registration" element={<RegistrationPage />} />
                 <Route path="/home" element={<LandingPage />} />
                 <Route path="/editProfile" element={<EditProfile />} />
+                <Route path="/home/payment" element={<PaymentPage />} />
+                <Route path="/orderStatus" element={<OrderStatus />} />
                 <Route path="/home/outletMenu/1" element={<MenuPage />} />
                 <Route path="/home/outletMenu/2" element={<MenuPage />} />
                 <Route path="/home/outletMenu/3" element={<MenuPage />} />
